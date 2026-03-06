@@ -310,27 +310,21 @@ export const content = {
   contact: {
     th: {
       title: "// contact",
-      heading: "ติดต่อเรา",
-      subtitle: "พร้อมเริ่มโปรเจกต์? คุยกับเราได้เลย",
-      form: {
-        name: "ชื่อ",
-        email: "อีเมล",
-        message: "ข้อความ",
-        send: "ส่งข้อความ",
-      },
+      heading: "เริ่มโปรเจกต์กับเรา",
+      subtitle:
+        "บอกเราเกี่ยวกับโปรเจกต์ของคุณ แค่กรอกฟอร์มสั้นๆ แล้วเราจะติดต่อกลับโดยเร็ว",
+      cta: "กรอกแบบฟอร์มเริ่มโปรเจกต์",
       email: "hello@farawaystech.dev",
+      emailLabel: "หรือส่งอีเมลหาเราได้ที่",
     },
     en: {
       title: "// contact",
-      heading: "Contact Us",
-      subtitle: "Ready to start your project? Let's talk.",
-      form: {
-        name: "Name",
-        email: "Email",
-        message: "Message",
-        send: "Send Message",
-      },
+      heading: "Start Your Project",
+      subtitle:
+        "Tell us about your project. Fill out a quick form and we'll get back to you shortly.",
+      cta: "Fill Out Project Brief",
       email: "hello@farawaystech.dev",
+      emailLabel: "Or email us at",
     },
   },
   footer: {

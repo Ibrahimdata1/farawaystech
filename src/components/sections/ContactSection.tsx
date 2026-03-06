@@ -9,12 +9,14 @@ interface ContactSectionProps {
   lang: Lang;
 }
 
+const FORM_URL = "https://smart-requirement.vercel.app";
+
 export default function ContactSection({ lang }: ContactSectionProps) {
   const t = content.contact[lang];
 
   return (
     <section id="contact" className="py-20 px-4">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-2xl mx-auto text-center">
         <ScrollReveal>
           <p className="text-accent-green font-mono text-sm mb-2">{t.title}</p>
           <h2 className="text-3xl md:text-4xl font-sans font-bold text-text-primary">
@@ -24,50 +26,28 @@ export default function ContactSection({ lang }: ContactSectionProps) {
         </ScrollReveal>
 
         <ScrollReveal delay={0.2}>
-          <div className="mt-12">
-            <TerminalWindow title="contact-form">
-              <form
-                onSubmit={(e) => e.preventDefault()}
-                className="space-y-4"
-              >
-                <div>
-                  <label className="block text-sm text-text-secondary font-mono mb-1">
-                    {t.form.name}
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full bg-bg-primary border border-border rounded px-3 py-2 text-text-primary text-sm font-sans focus:border-accent-green focus:outline-none transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm text-text-secondary font-mono mb-1">
-                    {t.form.email}
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full bg-bg-primary border border-border rounded px-3 py-2 text-text-primary text-sm font-sans focus:border-accent-green focus:outline-none transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm text-text-secondary font-mono mb-1">
-                    {t.form.message}
-                  </label>
-                  <textarea
-                    rows={4}
-                    className="w-full bg-bg-primary border border-border rounded px-3 py-2 text-text-primary text-sm font-sans focus:border-accent-green focus:outline-none transition-colors resize-none"
-                  />
-                </div>
-                <Button type="submit" variant="primary">
-                  {t.form.send}
+          <div className="mt-10">
+            <TerminalWindow title="start-project">
+              <div className="flex flex-col items-center gap-6 py-6">
+                <p className="font-mono text-sm text-text-secondary">
+                  <span className="text-accent-green">$</span> open smart-requirement-form
+                </p>
+                <Button
+                  href={FORM_URL}
+                  variant="primary"
+                  className="text-base px-8 py-4"
+                >
+                  {t.cta}
                 </Button>
-              </form>
+              </div>
             </TerminalWindow>
           </div>
         </ScrollReveal>
 
         <ScrollReveal delay={0.3}>
-          <div className="mt-8 text-center">
+          <div className="mt-8">
             <p className="text-text-secondary font-sans text-sm">
+              {t.emailLabel}{" "}
               <a
                 href={`mailto:${t.email}`}
                 className="text-accent-blue hover:underline"

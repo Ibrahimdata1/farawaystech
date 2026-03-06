@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FarAwaysTech - Landing Page
+
+Website สำหรับ FarAways Tech Software House
+
+**Live:** [farawaystech.dev](https://farawaystech.dev)
+
+---
+
+## Tech Stack
+
+| Category    | Technology                          |
+| ----------- | ----------------------------------- |
+| Framework   | Next.js 16 (App Router, Turbopack) |
+| Language    | TypeScript                          |
+| Styling     | Tailwind CSS 4                      |
+| Animation   | Framer Motion                       |
+| Particles   | tsparticles                         |
+| Font        | Inter, JetBrains Mono (Google Fonts)|
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Install dependencies
+npm install
+
+# Run dev server
+npm run dev        # http://localhost:3000
+
+# Build for production
+npm run build
+
+# Start production server
+npm run start
+
+# Lint
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+├── app/
+│   ├── globals.css          # Theme colors, custom scrollbar, animations
+│   ├── layout.tsx           # Root layout, metadata, fonts
+│   └── page.tsx             # Home page (lang state + all sections)
+│
+├── components/
+│   ├── layout/
+│   │   ├── Navbar.tsx       # Top nav, mobile hamburger, scroll spy, lang toggle
+│   │   └── Footer.tsx       # Footer with email + copyright
+│   │
+│   ├── sections/
+│   │   ├── HeroSection.tsx      # Hero banner, typing animation, particles
+│   │   ├── ServicesSection.tsx   # 6 service cards
+│   │   ├── AboutSection.tsx     # About + JSON display
+│   │   ├── ProcessSection.tsx   # 5-step process timeline
+│   │   ├── WhyUsSection.tsx     # 4 reasons cards
+│   │   ├── TechStackSection.tsx # Tech categories grid
+│   │   └── ContactSection.tsx   # CTA -> smart-requirement form
+│   │
+│   ├── ui/
+│   │   ├── Button.tsx           # Primary/secondary button (link or button)
+│   │   ├── ParticleBackground.tsx # tsparticles background
+│   │   ├── ScrollReveal.tsx     # Fade-in on scroll (framer-motion)
+│   │   ├── StatusBadge.tsx      # Animated status indicator
+│   │   ├── TerminalWindow.tsx   # macOS-style terminal card
+│   │   └── TypingAnimation.tsx  # Typewriter text effect
+│   │
+│   └── providers/
+│       └── MotionProvider.tsx   # LazyMotion provider (reduce bundle)
+│
+├── hooks/
+│   ├── useReducedMotion.ts  # Respect prefers-reduced-motion
+│   ├── useScrollSpy.ts     # Active section detection for nav
+│   └── useTypingEffect.ts  # Typing animation logic
+│
+└── lib/
+    ├── constants.ts         # NAV_ITEMS, SECTION_IDS
+    └── content.ts           # All text content (TH/EN), single source of truth
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Architecture Notes
 
-## Learn More
+### Multi-language (TH/EN)
 
-To learn more about Next.js, take a look at the following resources:
+- ภาษาถูกเก็บใน `src/lib/content.ts` เป็น object เดียว key ด้วย `th` | `en`
+- State `lang` อยู่ที่ `page.tsx` แล้ว pass ลง props ทุก section
+- Toggle ผ่านปุ่มบน Navbar
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Theming
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+สี theme ทั้งหมดอยู่ใน `globals.css` ภายใต้ `@theme` directive ของ Tailwind 4:
 
-## Deploy on Vercel
+| Token              | Color   | Usage                  |
+| ------------------ | ------- | ---------------------- |
+| `bg-primary`       | #0d1117 | Page background        |
+| `bg-card`          | #1c2128 | Card background        |
+| `bg-card-hover`    | #252d38 | Card hover             |
+| `text-primary`     | #e6edf3 | Main text              |
+| `text-secondary`   | #8b949e | Muted text             |
+| `accent-green`     | #40c057 | Brand color, CTA       |
+| `accent-blue`      | #58a6ff | Links, highlights      |
+| `accent-orange`    | #f0b429 | Accent                 |
+| `border`           | #30363d | Borders, dividers      |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Contact Flow
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ฟอร์มติดต่อไม่ได้อยู่ในเว็บนี้ ปุ่ม CTA ใน Contact Section จะลิงก์ไปที่:
+
+**[https://smart-requirement.vercel.app](https://smart-requirement.vercel.app)**
+
+เป็นแอปแยกสำหรับเก็บ requirement ของลูกค้า
+
+### Animation
+
+- ใช้ `framer-motion` ผ่าน `LazyMotion` provider เพื่อลด bundle size
+- ทุก section มี fade-in on scroll ผ่าน `ScrollReveal` component
+- Respect `prefers-reduced-motion` ผ่าน `useReducedMotion` hook
