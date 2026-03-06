@@ -3,6 +3,7 @@
 import { content, type Lang } from "@/lib/content";
 import TerminalWindow from "@/components/ui/TerminalWindow";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import ServiceIcon from "@/components/ui/ServiceIcon";
 
 interface WhyUsSectionProps {
   lang: Lang;
@@ -25,7 +26,7 @@ export default function WhyUsSection({ lang }: WhyUsSectionProps) {
           {t.items.map((item, i) => (
             <ScrollReveal key={i} delay={i * 0.1}>
               <TerminalWindow title={`feature-${i + 1}`}>
-                <div className="text-2xl mb-3">{item.icon}</div>
+                <ServiceIcon name={item.icon} className="mb-3" />
                 <h3 className="text-lg font-sans font-semibold text-text-primary mb-2">
                   {item.title}
                 </h3>

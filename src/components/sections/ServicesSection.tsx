@@ -3,6 +3,7 @@
 import { content, type Lang } from "@/lib/content";
 import TerminalWindow from "@/components/ui/TerminalWindow";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import ServiceIcon from "@/components/ui/ServiceIcon";
 
 interface ServicesSectionProps {
   lang: Lang;
@@ -23,11 +24,29 @@ export default function ServicesSection({ lang }: ServicesSectionProps) {
           </h2>
         </ScrollReveal>
 
+        {/* Row 1: 3 cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {t.items.map((item, index) => (
+          {t.items.slice(0, 3).map((item, index) => (
             <ScrollReveal key={index} delay={index * 0.08}>
               <TerminalWindow title={item.title}>
-                <div className="text-3xl mb-3">{item.icon}</div>
+                <ServiceIcon name={item.icon} className="mb-3" />
+                <h3 className="text-lg font-sans font-semibold text-text-primary mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-text-secondary font-sans">
+                  {item.desc}
+                </p>
+              </TerminalWindow>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        {/* Row 2: 2 cards centered */}
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {t.items.slice(3).map((item, index) => (
+            <ScrollReveal key={index + 3} delay={(index + 3) * 0.08}>
+              <TerminalWindow title={item.title}>
+                <ServiceIcon name={item.icon} className="mb-3" />
                 <h3 className="text-lg font-sans font-semibold text-text-primary mb-2">
                   {item.title}
                 </h3>

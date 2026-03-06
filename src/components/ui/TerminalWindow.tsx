@@ -23,7 +23,7 @@ export default function TerminalWindow({
         <span className="w-3 h-3 rounded-full bg-terminal-red" />
         <span className="w-3 h-3 rounded-full bg-terminal-yellow" />
         <span className="w-3 h-3 rounded-full bg-terminal-green" />
-        <span className="ml-2 text-xs text-text-secondary font-mono">
+        <span className="ml-2 text-xs text-text-secondary font-sans">
           {title}
         </span>
       </div>
