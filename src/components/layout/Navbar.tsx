@@ -43,7 +43,7 @@ export default function Navbar({ lang, onToggleLang }: NavbarProps) {
               <a
                 key={item.id}
                 href={item.href}
-                className={`text-sm transition-colors ${
+                className={`text-base transition-colors ${
                   isActive
                     ? "text-accent-green"
                     : "text-text-secondary hover:text-text-primary"
@@ -119,7 +119,7 @@ export default function Navbar({ lang, onToggleLang }: NavbarProps) {
                     key={item.id}
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`text-sm transition-colors ${
+                    className={`text-base transition-colors ${
                       isActive
                         ? "text-accent-green"
                         : "text-text-secondary hover:text-text-primary"
