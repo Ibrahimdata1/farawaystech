@@ -29,7 +29,7 @@ export default function Navbar({ lang, onToggleLang }: NavbarProps) {
     <nav className="sticky top-0 z-50 border-b border-border bg-bg-primary/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <a href="#" className="font-mono text-xl font-bold">
+        <a href="#" className="font-mono text-2xl font-bold">
           <span className="text-accent-green">FarAways</span>
           <span className="text-text-primary">Tech</span>
         </a>
