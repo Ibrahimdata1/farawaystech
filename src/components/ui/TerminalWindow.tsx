@@ -16,7 +16,7 @@ export default function TerminalWindow({
   return (
     <motion.div
       className={`rounded-lg border border-border bg-bg-card overflow-hidden ${className}`}
-      whileHover={{ borderColor: "rgba(88, 166, 255, 0.3)" }}
+      whileHover={{ borderColor: "var(--color-accent-blue)" }}
       transition={{ duration: 0.2 }}
     >
       <div className="flex items-center gap-3 px-4 py-3 border-b border-border bg-bg-primary/50">
