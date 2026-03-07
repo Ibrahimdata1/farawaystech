@@ -74,7 +74,7 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 py-4">
         {/* Logo */}
         <a href="#" className="font-mono text-2xl font-bold">
-          <span className="text-accent-green">FarAways</span>
+          <span className="text-accent-green">FarAway</span>
           <span className="text-text-primary">Tech</span>
         </a>
 

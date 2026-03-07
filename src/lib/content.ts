@@ -21,7 +21,7 @@ export const content = {
   },
   hero: {
     th: {
-      greeting: "สวัสดี, ยินดีต้อนรับสู่ FarAways Tech",
+      greeting: "สวัสดี, ยินดีต้อนรับสู่ FarAway Tech",
       headline: "เราสร้างซอฟต์แวร์ที่ตอบโจทย์ธุรกิจคุณ",
       subtitle:
         "ทีมนักพัฒนามืออาชีพ พร้อมเปลี่ยนไอเดียของคุณให้กลายเป็นซอฟต์แวร์คุณภาพ ส่งงานเร็ว ราคาเข้าถึงได้",
@@ -29,7 +29,7 @@ export const content = {
       status: "พร้อมรับงาน",
     },
     en: {
-      greeting: "Hello, welcome to FarAways Tech",
+      greeting: "Hello, welcome to FarAway Tech",
       headline: "We build software that works for your business",
       subtitle:
         "A professional dev team ready to turn your ideas into quality software. Fast delivery, affordable pricing.",
@@ -113,7 +113,7 @@ export const content = {
         { label: "คุ้มค่าทุกบาท", value: "คุณภาพระดับ Enterprise ในราคาที่เข้าถึงได้" },
       ],
       jsonDisplay: {
-        name: "FarAways Tech",
+        name: "FarAway Tech",
         type: "Software House",
         team: "Senior Developers",
         mission: "Quality software, accessible pricing",
@@ -130,7 +130,7 @@ export const content = {
         { label: "Best Value", value: "Enterprise quality at a fraction of the cost" },
       ],
       jsonDisplay: {
-        name: "FarAways Tech",
+        name: "FarAway Tech",
         type: "Software House",
         team: "Senior Developers",
         mission: "Quality software, accessible pricing",
@@ -304,7 +304,7 @@ export const content = {
       subtitle:
         "บอกเราเกี่ยวกับโปรเจกต์ของคุณ แค่กรอกฟอร์มสั้นๆ แล้วเราจะติดต่อกลับโดยเร็ว",
       cta: "กรอกแบบฟอร์มเริ่มโปรเจกต์",
-      email: "hello@farawaystech.dev",
+      email: "hello@farawaytech.dev",
       emailLabel: "หรือส่งอีเมลหาเราได้ที่",
     },
     en: {
@@ -313,18 +313,18 @@ export const content = {
       subtitle:
         "Tell us about your project. Fill out a quick form and we'll get back to you shortly.",
       cta: "Fill Out Project Brief",
-      email: "hello@farawaystech.dev",
+      email: "hello@farawaytech.dev",
       emailLabel: "Or email us at",
     },
   },
   footer: {
     th: {
-      copyright: "FarAways Tech. All rights reserved.",
-      tagline: "สร้างด้วยใจ โดยทีม FarAways Tech",
+      copyright: "FarAway Tech. All rights reserved.",
+      tagline: "สร้างด้วยใจ โดยทีม FarAway Tech",
     },
     en: {
-      copyright: "FarAways Tech. All rights reserved.",
-      tagline: "Built with passion by FarAways Tech team",
+      copyright: "FarAway Tech. All rights reserved.",
+      tagline: "Built with passion by FarAway Tech team",
     },
   },
 } as const;
