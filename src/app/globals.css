@@ -20,18 +20,18 @@
 
 /* Light mode overrides */
 [data-theme="light"] {
-  --color-bg-primary: #ffffff;
-  --color-bg-card: #f6f8fa;
-  --color-bg-card-hover: #eef1f5;
-  --color-text-primary: #1a1a2e;
-  --color-text-secondary: #57606a;
-  --color-accent-green: #2da44e;
-  --color-accent-orange: #d4871c;
-  --color-accent-blue: #0969da;
-  --color-terminal-red: #ff5f56;
-  --color-terminal-yellow: #ffbd2e;
-  --color-terminal-green: #27c93f;
-  --color-border: #d1d9e0;
+  --color-bg-primary: #f8f9fb;
+  --color-bg-card: #ffffff;
+  --color-bg-card-hover: #f1f5f9;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-accent-green: #059669;
+  --color-accent-orange: #d97706;
+  --color-accent-blue: #2563eb;
+  --color-terminal-red: #ef4444;
+  --color-terminal-yellow: #f59e0b;
+  --color-terminal-green: #22c55e;
+  --color-border: #e2e8f0;
 }
 
 html {
@@ -74,7 +74,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-theme="light"] ::selection {
-  background-color: rgba(9, 105, 218, 0.2);
+  background-color: rgba(5, 150, 105, 0.15);
+}
+
+/* Light mode card elevation */
+[data-theme="light"] .border-border.bg-bg-card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .border-border.bg-bg-card:hover {
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+}
+
+/* Light mode navbar refinement */
+[data-theme="light"] nav.border-b {
+  border-color: rgba(226, 232, 240, 0.8);
+  background-color: rgba(248, 249, 251, 0.85);
+}
+
+/* Light mode scrollbar */
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #f1f5f9;
 }
 
 ::-webkit-scrollbar {

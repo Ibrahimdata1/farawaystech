@@ -37,14 +37,14 @@ export default function ParticleBackground() {
         particles: {
           color: {
             value: isLight
-              ? ["#2da44e", "#0969da", "#d4871c"]
+              ? ["#059669", "#2563eb", "#d97706"]
               : ["#40c057", "#58a6ff", "#f0b429"],
           },
           links: {
-            color: isLight ? "#b0b8c1" : "#30363d",
+            color: isLight ? "#cbd5e1" : "#30363d",
             distance: 150,
             enable: true,
-            opacity: isLight ? 0.4 : 0.3,
+            opacity: isLight ? 0.3 : 0.3,
             width: 1,
           },
           move: {
@@ -57,7 +57,7 @@ export default function ParticleBackground() {
             density: { enable: true },
             value: 40,
           },
-          opacity: { value: isLight ? { min: 0.3, max: 0.7 } : { min: 0.1, max: 0.5 } },
+          opacity: { value: isLight ? { min: 0.15, max: 0.45 } : { min: 0.1, max: 0.5 } },
           size: { value: { min: 1, max: 3 } },
         },
         detectRetina: true,
