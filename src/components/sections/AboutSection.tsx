@@ -13,18 +13,18 @@ export default function AboutSection({ lang }: AboutSectionProps) {
   const json = data.jsonDisplay;
 
   return (
-    <section id="about" className="py-24 px-6">
+    <section id="about" className="py-16 md:py-24 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <p className="text-text-secondary font-mono text-sm mb-2">
             {data.title}
           </p>
-          <h2 className="text-3xl md:text-4xl font-mono font-bold text-text-primary mb-12">
+          <h2 className="text-3xl md:text-4xl font-mono font-bold text-text-primary mb-8 md:mb-12">
             {data.heading}
           </h2>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* Left: Description + Highlight Cards */}
           <ScrollReveal direction="left">
             <p className="text-text-secondary font-sans text-lg leading-relaxed mb-8">
@@ -50,7 +50,7 @@ export default function AboutSection({ lang }: AboutSectionProps) {
           {/* Right: JSON Display */}
           <ScrollReveal direction="right" delay={0.2}>
             <TerminalWindow title="about.json">
-              <pre className="font-mono text-sm leading-relaxed">
+              <pre className="font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
                 <span className="text-text-secondary">{"{"}</span>
                 {"\n"}
                 {Object.entries(json).map(([key, value], i, arr) => (

@@ -10,7 +10,7 @@ export default function Footer({ lang }: FooterProps) {
   const footer = content.footer[lang];
 
   return (
-    <footer className="border-t border-border bg-bg-primary px-6 py-8">
+    <footer className="border-t border-border bg-bg-primary px-4 sm:px-6 py-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 text-center">
         <p className="text-sm text-text-secondary">{footer.tagline}</p>
         <a

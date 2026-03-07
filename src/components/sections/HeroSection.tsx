@@ -44,7 +44,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
         transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
         className="mt-8 text-center max-w-2xl"
       >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-text-primary leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-text-primary leading-tight">
           {t.headline}
         </h1>
         <p className="mt-4 text-lg text-text-secondary font-sans">

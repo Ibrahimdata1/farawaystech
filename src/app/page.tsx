@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <MotionProvider>
       <Navbar lang={lang} onToggleLang={toggleLang} />
-      <main>
+      <main className="overflow-x-hidden">
         <HeroSection lang={lang} />
         <ServicesSection lang={lang} />
         <AboutSection lang={lang} />

@@ -17,8 +17,8 @@ export default function ScrollReveal({
 }: ScrollRevealProps) {
   const offsets = {
     up: { y: 40, x: 0 },
-    left: { x: -40, y: 0 },
-    right: { x: 40, y: 0 },
+    left: { x: -20, y: 0 },
+    right: { x: 20, y: 0 },
   };
 
   return (

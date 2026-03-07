@@ -29,7 +29,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
           <div className="mt-10">
             <TerminalWindow title="start-project">
               <div className="flex flex-col items-center gap-6 py-6">
-                <p className="font-mono text-sm text-text-secondary">
+                <p className="font-mono text-xs sm:text-sm text-text-secondary break-all">
                   <span className="text-accent-green">$</span> open smart-requirement-form
                 </p>
                 <Button

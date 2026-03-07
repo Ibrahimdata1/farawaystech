@@ -27,7 +27,7 @@ export default function Navbar({ lang, onToggleLang }: NavbarProps) {
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-bg-primary/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 py-4">
         {/* Logo */}
         <a href="#" className="font-mono text-2xl font-bold">
           <span className="text-accent-green">FarAways</span>
@@ -110,7 +110,7 @@ export default function Navbar({ lang, onToggleLang }: NavbarProps) {
             transition={{ duration: 0.2 }}
             className="overflow-hidden border-t border-border md:hidden"
           >
-            <div className="flex flex-col gap-4 px-6 py-4">
+            <div className="flex flex-col gap-4 px-4 sm:px-6 py-4">
               {NAV_ITEMS.map((item) => {
                 const label = nav[navKeyMap[item.id]];
                 const isActive = activeSection === item.id;

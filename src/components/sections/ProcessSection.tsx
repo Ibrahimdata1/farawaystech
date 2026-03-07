@@ -12,13 +12,13 @@ export default function ProcessSection({ lang }: ProcessSectionProps) {
   const data = content.process[lang];
 
   return (
-    <section id="process" className="py-24 px-6">
+    <section id="process" className="py-16 md:py-24 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <p className="text-text-secondary font-mono text-sm mb-2">
             {data.title}
           </p>
-          <h2 className="text-3xl md:text-4xl font-mono font-bold text-text-primary mb-16">
+          <h2 className="text-3xl md:text-4xl font-mono font-bold text-text-primary mb-10 md:mb-16">
             {data.heading}
           </h2>
         </ScrollReveal>
