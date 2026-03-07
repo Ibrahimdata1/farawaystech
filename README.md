@@ -1,39 +1,31 @@
-# FarAwaysTech - Landing Page
+# FarAway Tech - Landing Page
 
-Website สำหรับ FarAways Tech Software House
+Website สำหรับ FarAway Tech Software House
 
-**Live:** [farawaystech.dev](https://farawaystech.dev)
+**Live:** [farawaytech.vercel.app](https://farawaytech.vercel.app)
 
 ---
 
 ## Tech Stack
 
-| Category    | Technology                          |
-| ----------- | ----------------------------------- |
-| Framework   | Next.js 16 (App Router, Turbopack) |
-| Language    | TypeScript                          |
-| Styling     | Tailwind CSS 4                      |
-| Animation   | Framer Motion                       |
-| Particles   | tsparticles                         |
-| Font        | Inter, JetBrains Mono (Google Fonts)|
+| Category    | Technology                                    |
+| ----------- | --------------------------------------------- |
+| Framework   | Next.js 16 (App Router, Turbopack)            |
+| Language    | TypeScript                                    |
+| Styling     | Tailwind CSS 4                                |
+| Animation   | Framer Motion (LazyMotion)                    |
+| Particles   | tsparticles                                   |
+| Font        | Noto Sans Thai, Inter, JetBrains Mono (Google)|
+| Deploy      | Vercel                                        |
 
 ## Getting Started
 
 ```bash
-# Install dependencies
 npm install
-
-# Run dev server
 npm run dev        # http://localhost:3000
-
-# Build for production
-npm run build
-
-# Start production server
-npm run start
-
-# Lint
-npm run lint
+npm run build      # Production build
+npm run start      # Production server
+npm run lint       # ESLint
 ```
 
 ## Project Structure
@@ -41,18 +33,18 @@ npm run lint
 ```
 src/
 ├── app/
-│   ├── globals.css          # Theme colors, custom scrollbar, animations
-│   ├── layout.tsx           # Root layout, metadata, fonts
-│   └── page.tsx             # Home page (lang state + all sections)
+│   ├── globals.css          # Theme colors (dark + light), scrollbar, animations
+│   ├── layout.tsx           # Root layout, metadata, fonts, theme flash prevention
+│   └── page.tsx             # Home page (lang + theme state, all sections)
 │
 ├── components/
 │   ├── layout/
-│   │   ├── Navbar.tsx       # Top nav, mobile hamburger, scroll spy, lang toggle
+│   │   ├── Navbar.tsx       # Top nav, mobile hamburger, scroll spy, lang + theme toggle
 │   │   └── Footer.tsx       # Footer with email + copyright
 │   │
 │   ├── sections/
 │   │   ├── HeroSection.tsx      # Hero banner, typing animation, particles
-│   │   ├── ServicesSection.tsx   # 6 service cards
+│   │   ├── ServicesSection.tsx   # 5 service cards (3+2 centered grid)
 │   │   ├── AboutSection.tsx     # About + JSON display
 │   │   ├── ProcessSection.tsx   # 5-step process timeline
 │   │   ├── WhyUsSection.tsx     # 4 reasons cards
@@ -61,10 +53,11 @@ src/
 │   │
 │   ├── ui/
 │   │   ├── Button.tsx           # Primary/secondary button (link or button)
-│   │   ├── ParticleBackground.tsx # tsparticles background
+│   │   ├── ServiceIcon.tsx      # SVG icons with gradient container
+│   │   ├── ParticleBackground.tsx # Theme-aware tsparticles background
 │   │   ├── ScrollReveal.tsx     # Fade-in on scroll (framer-motion)
 │   │   ├── StatusBadge.tsx      # Animated status indicator
-│   │   ├── TerminalWindow.tsx   # macOS-style terminal card
+│   │   ├── TerminalWindow.tsx   # Card with accent bar header
 │   │   └── TypingAnimation.tsx  # Typewriter text effect
 │   │
 │   └── providers/
@@ -84,36 +77,58 @@ src/
 
 ### Multi-language (TH/EN)
 
-- ภาษาถูกเก็บใน `src/lib/content.ts` เป็น object เดียว key ด้วย `th` | `en`
-- State `lang` อยู่ที่ `page.tsx` แล้ว pass ลง props ทุก section
+- ข้อความทั้งหมดอยู่ใน `src/lib/content.ts` key ด้วย `th` | `en`
+- State `lang` อยู่ที่ `page.tsx` pass ลง props ทุก section
 - Toggle ผ่านปุ่มบน Navbar
 
-### Theming
+### Dark / Light Mode
 
-สี theme ทั้งหมดอยู่ใน `globals.css` ภายใต้ `@theme` directive ของ Tailwind 4:
+- Default: **Dark mode**
+- สลับได้ผ่านปุ่ม sun/moon บน Navbar
+- จำค่าไว้ใน `localStorage`
+- Flash prevention script ใน `<head>` ป้องกัน flash ตอนโหลดหน้า
+- ใช้ `data-theme` attribute บน `<html>` + CSS variables override
+
+**Dark mode colors:**
 
 | Token              | Color   | Usage                  |
 | ------------------ | ------- | ---------------------- |
 | `bg-primary`       | #0d1117 | Page background        |
 | `bg-card`          | #1c2128 | Card background        |
-| `bg-card-hover`    | #252d38 | Card hover             |
 | `text-primary`     | #e6edf3 | Main text              |
 | `text-secondary`   | #8b949e | Muted text             |
 | `accent-green`     | #40c057 | Brand color, CTA       |
 | `accent-blue`      | #58a6ff | Links, highlights      |
-| `accent-orange`    | #f0b429 | Accent                 |
 | `border`           | #30363d | Borders, dividers      |
+
+**Light mode colors:**
+
+| Token              | Color   | Usage                  |
+| ------------------ | ------- | ---------------------- |
+| `bg-primary`       | #f8f9fb | Page background        |
+| `bg-card`          | #ffffff | Card background        |
+| `text-primary`     | #0f172a | Main text              |
+| `text-secondary`   | #475569 | Muted text             |
+| `accent-green`     | #059669 | Brand color, CTA       |
+| `accent-blue`      | #2563eb | Links, highlights      |
+| `border`           | #e2e8f0 | Borders, dividers      |
+
+### Services (5 items)
+
+1. เว็บไซต์แนะนำตัว / โชว์ผลงาน
+2. แอปมือถือ (iOS / Android)
+3. ระบบออนไลน์ (จอง, นัดหมาย, บัญชี)
+4. ร้านค้าออนไลน์
+5. ระบบจัดการหลังบ้าน
 
 ### Contact Flow
 
-ฟอร์มติดต่อไม่ได้อยู่ในเว็บนี้ ปุ่ม CTA ใน Contact Section จะลิงก์ไปที่:
+ไม่มี backend/DB ในโปรเจคนี้ ปุ่ม CTA ลิงก์ไปที่:
 
 **[https://smart-requirement.vercel.app](https://smart-requirement.vercel.app)**
 
-เป็นแอปแยกสำหรับเก็บ requirement ของลูกค้า
+### Responsive
 
-### Animation
-
-- ใช้ `framer-motion` ผ่าน `LazyMotion` provider เพื่อลด bundle size
-- ทุก section มี fade-in on scroll ผ่าน `ScrollReveal` component
-- Respect `prefers-reduced-motion` ผ่าน `useReducedMotion` hook
+- รองรับ 320px (iPhone SE) ถึง 1920px+
+- Touch target ขั้นต่ำ 44px ตามมาตรฐาน Apple/Google
+- `overflow-x: hidden` บน body + main ป้องกัน horizontal scroll
