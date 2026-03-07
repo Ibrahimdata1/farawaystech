@@ -113,7 +113,7 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
         </div>
 
         {/* Mobile hamburger */}
-        <div className="flex items-center gap-3 md:hidden">
+        <div className="flex items-center gap-1.5 sm:gap-3 md:hidden">
           <button
             onClick={onToggleTheme}
             className="rounded border border-border p-2 min-h-[44px] min-w-[44px] flex items-center justify-center text-text-secondary transition-colors hover:text-text-primary"
@@ -128,8 +128,9 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
             {lang === "en" ? "TH" : "EN"}
           </button>
           <button
+            type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="text-text-secondary hover:text-text-primary min-h-[44px] min-w-[44px] flex items-center justify-center"
+            className="text-text-secondary hover:text-text-primary min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation"
             aria-label="Toggle menu"
           >
             <svg
@@ -173,18 +174,26 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
                 const label = nav[navKeyMap[item.id]];
                 const isActive = activeSection === item.id;
                 return (
-                  <a
+                  <button
                     key={item.id}
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    className={`text-base transition-colors py-2 min-h-[44px] flex items-center ${
+                    type="button"
+                    onClick={() => {
+                      setMobileOpen(false);
+                      setTimeout(() => {
+                        const el = document.querySelector(item.href) as HTMLElement | null;
+                        if (el) {
+                          window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset, behavior: "smooth" });
+                        }
+                      }, 250);
+                    }}
+                    className={`w-full text-left text-base transition-colors py-2 min-h-[44px] flex items-center touch-manipulation ${
                       isActive
                         ? "text-accent-green"
                         : "text-text-secondary hover:text-text-primary"
                     }`}
                   >
                     {label}
-                  </a>
+                  </button>
                 );
               })}
             </div>

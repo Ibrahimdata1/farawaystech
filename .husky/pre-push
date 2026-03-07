@@ -1,0 +1,10 @@
+#!/bin/sh
+echo "Running mobile tests before push..."
+npm run test:mobile
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "Mobile tests FAILED. Push blocked."
+  echo "Run: npm run test:mobile:report — to see what broke."
+  exit 1
+fi
+echo "All mobile tests passed. Pushing..."
