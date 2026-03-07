@@ -19,11 +19,9 @@ export default function TerminalWindow({
       whileHover={{ borderColor: "rgba(88, 166, 255, 0.3)" }}
       transition={{ duration: 0.2 }}
     >
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-bg-primary/50">
-        <span className="w-3 h-3 rounded-full bg-terminal-red" />
-        <span className="w-3 h-3 rounded-full bg-terminal-yellow" />
-        <span className="w-3 h-3 rounded-full bg-terminal-green" />
-        <span className="ml-2 text-xs text-text-secondary font-sans">
+      <div className="flex items-center gap-3 px-4 py-3 border-b border-border bg-bg-primary/50">
+        <div className="w-1 h-4 rounded-full bg-accent-green/60" />
+        <span className="text-xs text-text-secondary font-sans tracking-wide uppercase">
           {title}
         </span>
       </div>
