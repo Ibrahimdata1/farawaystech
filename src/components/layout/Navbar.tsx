@@ -107,6 +107,7 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
           <button
             onClick={onToggleLang}
             className="rounded border border-border px-3 py-1 text-sm text-text-secondary transition-colors hover:text-text-primary"
+            aria-label={lang === "en" ? "Switch to Thai" : "Switch to English"}
           >
             {lang === "en" ? "TH" : "EN"}
           </button>
@@ -124,6 +125,7 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
           <button
             onClick={onToggleLang}
             className="rounded border border-border px-3 py-2 min-h-[44px] min-w-[44px] text-sm text-text-secondary transition-colors hover:text-text-primary"
+            aria-label={lang === "en" ? "Switch to Thai" : "Switch to English"}
           >
             {lang === "en" ? "TH" : "EN"}
           </button>
@@ -182,7 +184,7 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
                       setTimeout(() => {
                         const el = document.querySelector(item.href) as HTMLElement | null;
                         if (el) {
-                          window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset, behavior: "smooth" });
+                          window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: "smooth" });
                         }
                       }, 250);
                     }}

@@ -18,6 +18,7 @@ const notoSansThai = Noto_Sans_Thai({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://farawaystech.dev"),
   title: "FarAway Tech - Software House | พัฒนาซอฟต์แวร์คุณภาพ",
   description:
     "FarAway Tech - ทีมพัฒนาซอฟต์แวร์มืออาชีพ สร้างเว็บ แอป ระบบหลังบ้าน AI Agent ครบวงจร คุณภาพสูง ราคาเข้าถึงได้",
@@ -30,12 +31,21 @@ export const metadata: Metadata = {
     "Thailand",
   ],
   authors: [{ name: "FarAway Tech" }],
+  alternates: {
+    canonical: "https://farawaystech.dev",
+  },
   openGraph: {
     title: "FarAway Tech - Software House",
     description: "เราสร้างซอฟต์แวร์ที่ตอบโจทย์ธุรกิจคุณ",
-    url: "https://farawaytech.dev",
+    url: "https://farawaystech.dev",
     siteName: "FarAway Tech",
     type: "website",
+    locale: "th_TH",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FarAway Tech - Software House",
+    description: "เราสร้างซอฟต์แวร์ที่ตอบโจทย์ธุรกิจคุณ",
   },
 };
 

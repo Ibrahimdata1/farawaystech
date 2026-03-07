@@ -90,7 +90,7 @@ test.describe("Theme toggle on mobile", () => {
 test.describe("Language toggle on mobile", () => {
   test("lang button is visible and switches language", async ({ page }) => {
     await page.goto("/");
-    const langBtn = page.locator(".md\\:hidden").getByRole("button", { name: /EN|TH/ });
+    const langBtn = page.locator(".md\\:hidden").getByRole("button", { name: /Switch to (Thai|English)/ });
     await expect(langBtn).toBeVisible();
     const before = await langBtn.textContent();
     await langBtn.click();

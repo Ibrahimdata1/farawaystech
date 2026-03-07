@@ -10,22 +10,26 @@ export function useTypingEffect(text: string, speed = 50, delay = 500) {
     setDisplayed("");
     setIsDone(false);
 
+    let interval: ReturnType<typeof setInterval> | null = null;
+
     const timeout = setTimeout(() => {
       let i = 0;
-      const interval = setInterval(() => {
+      interval = setInterval(() => {
         if (i < text.length) {
           setDisplayed(text.slice(0, i + 1));
           i++;
         } else {
           setIsDone(true);
-          clearInterval(interval);
+          clearInterval(interval!);
+          interval = null;
         }
       }, speed);
-
-      return () => clearInterval(interval);
     }, delay);
 
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(timeout);
+      if (interval) clearInterval(interval);
+    };
   }, [text, speed, delay]);
 
   return { displayed, isDone };

@@ -15,14 +15,12 @@ export default function TypingAnimation({
   delay = 500,
   className = "",
 }: TypingAnimationProps) {
-  const { displayed, isDone } = useTypingEffect(text, speed, delay);
+  const { displayed } = useTypingEffect(text, speed, delay);
 
   return (
     <span className={className}>
       {displayed}
-      <span
-        className={`cursor-blink ml-0.5 ${isDone ? "opacity-100" : "opacity-100"}`}
-      >
+      <span className="cursor-blink ml-0.5">
         |
       </span>
     </span>
