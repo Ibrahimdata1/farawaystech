@@ -18,6 +18,22 @@
   --font-sans: "Noto Sans Thai", "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Light mode overrides */
+[data-theme="light"] {
+  --color-bg-primary: #ffffff;
+  --color-bg-card: #f6f8fa;
+  --color-bg-card-hover: #eef1f5;
+  --color-text-primary: #1a1a2e;
+  --color-text-secondary: #57606a;
+  --color-accent-green: #2da44e;
+  --color-accent-orange: #d4871c;
+  --color-accent-blue: #0969da;
+  --color-terminal-red: #ff5f56;
+  --color-terminal-yellow: #ffbd2e;
+  --color-terminal-green: #27c93f;
+  --color-border: #d1d9e0;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -27,6 +43,21 @@ body {
   color: var(--color-text-primary);
   font-family: var(--font-sans);
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth theme transition for key layout elements */
+nav,
+main,
+footer,
+section,
+div,
+a,
+button,
+span,
+p,
+h1, h2, h3, h4, h5, h6 {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 
 @keyframes blink {
@@ -40,6 +71,10 @@ body {
 
 ::selection {
   background-color: rgba(88, 166, 255, 0.3);
+}
+
+[data-theme="light"] ::selection {
+  background-color: rgba(9, 105, 218, 0.2);
 }
 
 ::-webkit-scrollbar {
