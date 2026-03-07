@@ -25,7 +25,7 @@ export default function TerminalWindow({
           {title}
         </span>
       </div>
-      <div className="p-4 sm:p-5 overflow-hidden">{children}</div>
+      <div className="p-4 sm:p-5 overflow-x-auto">{children}</div>
     </motion.div>
   );
 }

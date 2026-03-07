@@ -13,7 +13,7 @@ export default function TechStackSection({ lang }: TechStackSectionProps) {
   const categories = content.techStack.categories;
 
   return (
-    <section id="tech-stack" className="py-20 px-4">
+    <section id="tech-stack" className="py-20 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal>
           <p className="text-accent-green font-mono text-sm mb-2">{t.title}</p>

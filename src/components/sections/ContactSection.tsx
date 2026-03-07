@@ -15,7 +15,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
   const t = content.contact[lang];
 
   return (
-    <section id="contact" className="py-20 px-4">
+    <section id="contact" className="py-20 px-4 sm:px-6">
       <div className="max-w-2xl mx-auto text-center">
         <ScrollReveal>
           <p className="text-accent-green font-mono text-sm mb-2">{t.title}</p>

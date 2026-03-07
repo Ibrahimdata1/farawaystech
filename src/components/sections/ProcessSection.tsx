@@ -24,7 +24,7 @@ export default function ProcessSection({ lang }: ProcessSectionProps) {
         </ScrollReveal>
 
         {/* Desktop: Horizontal Pipeline */}
-        <div className="hidden md:flex items-start gap-0">
+        <div className="hidden lg:flex items-start gap-0">
           {data.steps.map((step, i) => (
             <div key={i} className="flex items-start flex-1">
               <ScrollReveal delay={i * 0.15} className="flex-1">
@@ -49,8 +49,8 @@ export default function ProcessSection({ lang }: ProcessSectionProps) {
           ))}
         </div>
 
-        {/* Mobile: Vertical Timeline */}
-        <div className="md:hidden space-y-0">
+        {/* Mobile/Tablet: Vertical Timeline */}
+        <div className="lg:hidden space-y-0">
           {data.steps.map((step, i) => (
             <div key={i} className="flex flex-col items-center">
               <ScrollReveal delay={i * 0.1} className="w-full">

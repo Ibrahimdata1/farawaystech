@@ -13,7 +13,7 @@ export default function WhyUsSection({ lang }: WhyUsSectionProps) {
   const t = content.whyUs[lang];
 
   return (
-    <section id="why-us" className="py-20 px-4">
+    <section id="why-us" className="py-20 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal>
           <p className="text-accent-green font-mono text-sm mb-2">{t.title}</p>

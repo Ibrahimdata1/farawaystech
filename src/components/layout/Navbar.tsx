@@ -65,13 +65,13 @@ export default function Navbar({ lang, onToggleLang }: NavbarProps) {
         <div className="flex items-center gap-3 md:hidden">
           <button
             onClick={onToggleLang}
-            className="rounded border border-border px-3 py-1 text-sm text-text-secondary transition-colors hover:text-text-primary"
+            className="rounded border border-border px-3 py-2 min-h-[44px] min-w-[44px] text-sm text-text-secondary transition-colors hover:text-text-primary"
           >
             {lang === "en" ? "TH" : "EN"}
           </button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="text-text-secondary hover:text-text-primary"
+            className="text-text-secondary hover:text-text-primary min-h-[44px] min-w-[44px] flex items-center justify-center"
             aria-label="Toggle menu"
           >
             <svg
@@ -110,7 +110,7 @@ export default function Navbar({ lang, onToggleLang }: NavbarProps) {
             transition={{ duration: 0.2 }}
             className="overflow-hidden border-t border-border md:hidden"
           >
-            <div className="flex flex-col gap-4 px-4 sm:px-6 py-4">
+            <div className="flex flex-col gap-1 px-4 sm:px-6 py-2">
               {NAV_ITEMS.map((item) => {
                 const label = nav[navKeyMap[item.id]];
                 const isActive = activeSection === item.id;
@@ -119,7 +119,7 @@ export default function Navbar({ lang, onToggleLang }: NavbarProps) {
                     key={item.id}
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`text-base transition-colors ${
+                    className={`text-base transition-colors py-2 min-h-[44px] flex items-center ${
                       isActive
                         ? "text-accent-green"
                         : "text-text-secondary hover:text-text-primary"

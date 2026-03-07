@@ -13,7 +13,7 @@ export default function ServicesSection({ lang }: ServicesSectionProps) {
   const t = content.services[lang];
 
   return (
-    <section id="services" className="py-20 px-4">
+    <section id="services" className="py-20 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <p className="font-mono text-text-secondary text-sm mb-2">
