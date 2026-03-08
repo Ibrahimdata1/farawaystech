@@ -11,10 +11,10 @@ interface PortfolioSectionProps {
 }
 
 const screenshots = [
-  { src: "/portfolio/qrforpay-dashboard.png", key: "dashboard" },
-  { src: "/portfolio/qrforpay-orders.png", key: "orders" },
-  { src: "/portfolio/qrforpay-tables.png", key: "tables" },
-  { src: "/portfolio/qrforpay-settings.png", key: "settings" },
+  { src: "/portfolio/qrforpay-dashboard.webp", key: "dashboard" },
+  { src: "/portfolio/qrforpay-orders.webp", key: "orders" },
+  { src: "/portfolio/qrforpay-tables.webp", key: "tables" },
+  { src: "/portfolio/qrforpay-settings.webp", key: "settings" },
 ] as const;
 
 const SWIPE_THRESHOLD = 50;
@@ -80,6 +80,20 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
                     ref={constraintsRef}
                     className="relative w-[220px] h-[450px] sm:w-[260px] sm:h-[530px] overflow-hidden select-none cursor-grab active:cursor-grabbing"
                   >
+                    {/* Preload all images (hidden) */}
+                    {screenshots.map((s, idx) => (
+                      idx !== activeIdx && (
+                        <Image
+                          key={`preload-${s.key}`}
+                          src={s.src}
+                          alt=""
+                          fill
+                          className="opacity-0 pointer-events-none"
+                          sizes="260px"
+                          aria-hidden
+                        />
+                      )
+                    ))}
                     <AnimatePresence mode="wait" custom={direction}>
                       <motion.div
                         key={activeIdx}
@@ -102,6 +116,7 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
                           className="object-contain"
                           sizes="260px"
                           draggable={false}
+                          priority
                         />
                       </motion.div>
                     </AnimatePresence>
