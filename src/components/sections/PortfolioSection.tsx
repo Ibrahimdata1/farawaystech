@@ -26,9 +26,9 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
   const constraintsRef = useRef(null);
 
   const goTo = (newIdx: number, dir: number) => {
-    if (newIdx < 0 || newIdx >= screenshots.length) return;
+    const wrapped = ((newIdx % screenshots.length) + screenshots.length) % screenshots.length;
     setDirection(dir);
-    setActiveIdx(newIdx);
+    setActiveIdx(wrapped);
   };
 
   const handleDragEnd = (_: unknown, info: PanInfo) => {
@@ -125,9 +125,6 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
                       ))}
                     </div>
                   </div>
-                  <p className="text-xs text-text-secondary font-mono mt-1.5">
-                    {t.screens[activeIdx]}
-                  </p>
                 </div>
 
                 {/* Right: Project details */}
