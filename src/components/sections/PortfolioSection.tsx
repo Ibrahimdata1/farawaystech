@@ -12,7 +12,6 @@ interface PortfolioSectionProps {
 
 const screenshots = [
   { src: "/portfolio/qrforpay-dashboard.png", key: "dashboard" },
-  { src: "/portfolio/qrforpay-products.png", key: "products" },
   { src: "/portfolio/qrforpay-orders.png", key: "orders" },
   { src: "/portfolio/qrforpay-tables.png", key: "tables" },
   { src: "/portfolio/qrforpay-settings.png", key: "settings" },
@@ -79,7 +78,7 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
                 <div className="flex flex-col items-center md:w-1/3">
                   <div
                     ref={constraintsRef}
-                    className="relative w-[240px] h-[420px] sm:w-[280px] sm:h-[490px] rounded-[1.5rem] border-[3px] border-border/60 bg-[#1a1a1a] overflow-hidden shadow-2xl select-none cursor-grab active:cursor-grabbing"
+                    className="relative w-[220px] h-[450px] sm:w-[260px] sm:h-[530px] overflow-hidden select-none cursor-grab active:cursor-grabbing"
                   >
                     <AnimatePresence mode="wait" custom={direction}>
                       <motion.div
@@ -100,12 +99,8 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
                           src={screenshots[activeIdx].src}
                           alt={t.screens[activeIdx]}
                           fill
-                          className="object-cover object-center"
-                          style={{
-                            objectPosition: "center 8%",
-                            transform: "scale(1.12)",
-                          }}
-                          sizes="280px"
+                          className="object-contain"
+                          sizes="260px"
                           draggable={false}
                         />
                       </motion.div>

@@ -117,7 +117,6 @@ export const content = {
       platform: "iOS / Android",
       screens: [
         "แดชบอร์ดยอดขาย",
-        "จัดการสินค้า",
         "รายการสั่งซื้อ",
         "จัดการโต๊ะ",
         "ตั้งค่าร้าน",
@@ -151,8 +150,7 @@ export const content = {
       platform: "iOS / Android",
       screens: [
         "Sales Dashboard",
-        "Product Management",
-        "Order History",
+        "Order Management",
         "Table Management",
         "Store Settings",
       ],
