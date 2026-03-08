@@ -1,8 +1,8 @@
-# FarAway Tech - Landing Page
+# RunAway Tech - Landing Page
 
-Website สำหรับ FarAway Tech Software House
+Website สำหรับ RunAway Tech Software House
 
-**Live:** [farawaytech.vercel.app](https://farawaytech.vercel.app)
+**Live:** [runawaytech.vercel.app](https://runawaytech.vercel.app)
 
 ---
 

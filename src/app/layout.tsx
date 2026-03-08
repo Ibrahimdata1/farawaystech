@@ -18,8 +18,8 @@ const notoSansThai = Noto_Sans_Thai({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://farawaytech.vercel.app"),
-  title: "FarAway Tech - รับทำเว็บไซต์ รับทำแอป Software House คุณภาพ",
+  metadataBase: new URL("https://runawaytech.vercel.app"),
+  title: "RunAway Tech - รับทำเว็บไซต์ รับทำแอป Software House คุณภาพ",
   description:
     "รับทำเว็บไซต์ รับทำแอปมือถือ รับเขียนโปรแกรม ระบบหลังบ้าน POS AI Agent ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้ ส่งงานไว มีผลงานจริง",
   keywords: [
@@ -40,22 +40,22 @@ export const metadata: Metadata = {
     "รับทำ POS",
     "รับทำระบบร้านอาหาร",
   ],
-  authors: [{ name: "FarAway Tech" }],
+  authors: [{ name: "RunAway Tech" }],
   alternates: {
-    canonical: "https://farawaytech.vercel.app",
+    canonical: "https://runawaytech.vercel.app",
   },
   openGraph: {
-    title: "FarAway Tech - รับทำเว็บไซต์ รับทำแอป Software House",
+    title: "RunAway Tech - รับทำเว็บไซต์ รับทำแอป Software House",
     description:
       "รับทำเว็บไซต์ รับทำแอปมือถือ รับเขียนโปรแกรม ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้ มีผลงานจริง",
-    url: "https://farawaytech.vercel.app",
-    siteName: "FarAway Tech",
+    url: "https://runawaytech.vercel.app",
+    siteName: "RunAway Tech",
     type: "website",
     locale: "th_TH",
   },
   twitter: {
     card: "summary_large_image",
-    title: "FarAway Tech - รับทำเว็บไซต์ รับทำแอป Software House",
+    title: "RunAway Tech - รับทำเว็บไซต์ รับทำแอป Software House",
     description:
       "รับทำเว็บไซต์ รับทำแอปมือถือ รับเขียนโปรแกรม ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้ มีผลงานจริง",
   },
@@ -89,10 +89,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
-              name: "FarAway Tech",
+              name: "RunAway Tech",
               description:
                 "รับทำเว็บไซต์ รับทำแอปมือถือ รับเขียนโปรแกรม ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้",
-              url: "https://farawaytech.vercel.app",
+              url: "https://runawaytech.vercel.app",
               serviceType: [
                 "รับทำเว็บไซต์",
                 "รับทำแอปมือถือ",
