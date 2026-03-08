@@ -46,7 +46,7 @@ test.describe("Mobile nav scrolling", () => {
     await page.goto("/");
   });
 
-  const sections = ["services", "about", "process", "why-us", "tech-stack", "contact"];
+  const sections = ["services", "portfolio", "about", "process", "why-us", "tech-stack", "contact"];
 
   for (const section of sections) {
     test(`tapping '${section}' scrolls to correct section`, async ({ page }) => {
@@ -118,7 +118,7 @@ test.describe("Page renders correctly on mobile", () => {
 
   test("all sections exist in DOM", async ({ page }) => {
     await page.goto("/");
-    for (const id of ["services", "about", "process", "why-us", "tech-stack", "contact"]) {
+    for (const id of ["services", "portfolio", "about", "process", "why-us", "tech-stack", "contact"]) {
       await expect(page.locator(`#${id}`)).toBeAttached();
     }
   });
