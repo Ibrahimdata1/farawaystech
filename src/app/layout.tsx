@@ -18,7 +18,7 @@ const notoSansThai = Noto_Sans_Thai({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://farawaystech.dev"),
+  metadataBase: new URL("https://farawaytech.vercel.app"),
   title: "FarAway Tech - รับทำเว็บไซต์ รับทำแอป Software House คุณภาพ",
   description:
     "รับทำเว็บไซต์ รับทำแอปมือถือ รับเขียนโปรแกรม ระบบหลังบ้าน POS AI Agent ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้ ส่งงานไว มีผลงานจริง",
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "FarAway Tech" }],
   alternates: {
-    canonical: "https://farawaystech.dev",
+    canonical: "https://farawaytech.vercel.app",
   },
   openGraph: {
     title: "FarAway Tech - รับทำเว็บไซต์ รับทำแอป Software House",
     description:
       "รับทำเว็บไซต์ รับทำแอปมือถือ รับเขียนโปรแกรม ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้ มีผลงานจริง",
-    url: "https://farawaystech.dev",
+    url: "https://farawaytech.vercel.app",
     siteName: "FarAway Tech",
     type: "website",
     locale: "th_TH",
@@ -92,7 +92,7 @@ export default function RootLayout({
               name: "FarAway Tech",
               description:
                 "รับทำเว็บไซต์ รับทำแอปมือถือ รับเขียนโปรแกรม ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้",
-              url: "https://farawaystech.dev",
+              url: "https://farawaytech.vercel.app",
               serviceType: [
                 "รับทำเว็บไซต์",
                 "รับทำแอปมือถือ",
