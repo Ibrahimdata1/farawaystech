@@ -8,6 +8,7 @@ import { useScrollSpy } from "@/hooks/useScrollSpy";
 
 const navKeyMap: Record<string, keyof typeof content.nav.en> = {
   services: "services",
+  portfolio: "portfolio",
   about: "about",
   process: "process",
   "why-us": "whyUs",

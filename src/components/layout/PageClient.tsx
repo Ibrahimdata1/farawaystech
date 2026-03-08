@@ -11,6 +11,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import ProcessSection from "@/components/sections/ProcessSection";
 import WhyUsSection from "@/components/sections/WhyUsSection";
 import TechStackSection from "@/components/sections/TechStackSection";
+import PortfolioSection from "@/components/sections/PortfolioSection";
 import ContactSection from "@/components/sections/ContactSection";
 
 type Theme = "dark" | "light";
@@ -52,6 +53,7 @@ export default function PageClient() {
       <main id="main-content" className="overflow-x-hidden">
         <HeroSection lang={lang} />
         <ServicesSection lang={lang} />
+        <PortfolioSection lang={lang} />
         <AboutSection lang={lang} />
         <ProcessSection lang={lang} />
         <WhyUsSection lang={lang} />

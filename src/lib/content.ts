@@ -4,6 +4,7 @@ export const content = {
   nav: {
     th: {
       services: "บริการ",
+      portfolio: "ผลงาน",
       about: "เกี่ยวกับเรา",
       process: "ขั้นตอน",
       whyUs: "ทำไมต้องเรา",
@@ -12,6 +13,7 @@ export const content = {
     },
     en: {
       services: "Services",
+      portfolio: "Portfolio",
       about: "About",
       process: "Process",
       whyUs: "Why Us",
@@ -98,6 +100,76 @@ export const content = {
           title: "Back-Office Systems",
           desc: "Dashboards for data, stock, employees, and reports — all in one place",
         },
+      ],
+    },
+  },
+  portfolio: {
+    th: {
+      title: "// portfolio",
+      heading: "ผลงานของเรา",
+      subtitle:
+        "โปรเจกต์จริงที่เราพัฒนาและส่งมอบให้ลูกค้า — พิสูจน์ว่าเราทำงานจริง ส่งมอบจริง",
+      projectLabel: "CASE STUDY",
+      projectName: "QRForPay",
+      projectDesc:
+        "แอปจัดการร้านอาหารครบวงจร — POS, QR Payment, จัดการโต๊ะ, สต็อกสินค้า, ออเดอร์, สรุปยอดขาย ใช้งานได้ทั้ง iOS และ Android พัฒนาด้วย React Native + Supabase",
+      status: "ใช้งานจริง",
+      platform: "iOS / Android",
+      screens: [
+        "แดชบอร์ดยอดขาย",
+        "จัดการสินค้า",
+        "รายการสั่งซื้อ",
+        "จัดการโต๊ะ",
+        "ตั้งค่าร้าน",
+      ],
+      features: [
+        "สรุปยอดขายรายวัน / รายเดือน",
+        "จัดการสินค้าพร้อมรูปภาพ",
+        "ระบบจัดการโต๊ะ real-time",
+        "รับชำระผ่าน QR PromptPay",
+        "ประวัติออเดอร์ / กรองตามสถานะ",
+        "จัดการพนักงาน / สิทธิ์การใช้งาน",
+      ],
+      techUsed: [
+        "React Native",
+        "TypeScript",
+        "Supabase",
+        "PromptPay QR",
+        "Expo",
+      ],
+    },
+    en: {
+      title: "// portfolio",
+      heading: "Our Work",
+      subtitle:
+        "Real projects we've built and delivered — proof that we ship quality software.",
+      projectLabel: "CASE STUDY",
+      projectName: "QRForPay",
+      projectDesc:
+        "A complete restaurant management app — POS, QR Payment, table management, inventory, orders, and sales dashboard. Available on iOS and Android, built with React Native + Supabase.",
+      status: "Live",
+      platform: "iOS / Android",
+      screens: [
+        "Sales Dashboard",
+        "Product Management",
+        "Order History",
+        "Table Management",
+        "Store Settings",
+      ],
+      features: [
+        "Daily / monthly sales summary",
+        "Product management with images",
+        "Real-time table management",
+        "QR PromptPay payment",
+        "Order history with status filters",
+        "Staff management & permissions",
+      ],
+      techUsed: [
+        "React Native",
+        "TypeScript",
+        "Supabase",
+        "PromptPay QR",
+        "Expo",
       ],
     },
   },

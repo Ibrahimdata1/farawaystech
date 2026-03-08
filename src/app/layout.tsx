@@ -19,24 +19,35 @@ const notoSansThai = Noto_Sans_Thai({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://farawaystech.dev"),
-  title: "FarAway Tech - Software House | พัฒนาซอฟต์แวร์คุณภาพ",
+  title: "FarAway Tech - รับทำเว็บไซต์ รับทำแอป Software House คุณภาพ",
   description:
-    "FarAway Tech - ทีมพัฒนาซอฟต์แวร์มืออาชีพ สร้างเว็บ แอป ระบบหลังบ้าน AI Agent ครบวงจร คุณภาพสูง ราคาเข้าถึงได้",
+    "รับทำเว็บไซต์ รับทำแอปมือถือ รับเขียนโปรแกรม ระบบหลังบ้าน POS AI Agent ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้ ส่งงานไว มีผลงานจริง",
   keywords: [
+    "รับทำเว็บไซต์",
+    "รับทำเว็บ",
+    "รับเขียนโปรแกรม",
+    "รับทำแอป",
+    "รับทำแอปมือถือ",
+    "ทำเว็บราคาถูก",
     "software house",
+    "software house ไทย",
     "พัฒนาซอฟต์แวร์",
     "web development",
+    "รับทำเว็บไซต์ราคาถูก",
+    "รับทำระบบ",
     "mobile app",
     "AI agent",
-    "Thailand",
+    "รับทำ POS",
+    "รับทำระบบร้านอาหาร",
   ],
   authors: [{ name: "FarAway Tech" }],
   alternates: {
     canonical: "https://farawaystech.dev",
   },
   openGraph: {
-    title: "FarAway Tech - Software House",
-    description: "เราสร้างซอฟต์แวร์ที่ตอบโจทย์ธุรกิจคุณ",
+    title: "FarAway Tech - รับทำเว็บไซต์ รับทำแอป Software House",
+    description:
+      "รับทำเว็บไซต์ รับทำแอปมือถือ รับเขียนโปรแกรม ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้ มีผลงานจริง",
     url: "https://farawaystech.dev",
     siteName: "FarAway Tech",
     type: "website",
@@ -44,8 +55,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FarAway Tech - Software House",
-    description: "เราสร้างซอฟต์แวร์ที่ตอบโจทย์ธุรกิจคุณ",
+    title: "FarAway Tech - รับทำเว็บไซต์ รับทำแอป Software House",
+    description:
+      "รับทำเว็บไซต์ รับทำแอปมือถือ รับเขียนโปรแกรม ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้ มีผลงานจริง",
   },
 };
 
@@ -69,6 +81,30 @@ export default function RootLayout({
                 } catch(e) {}
               })();
             `,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              name: "FarAway Tech",
+              description:
+                "รับทำเว็บไซต์ รับทำแอปมือถือ รับเขียนโปรแกรม ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้",
+              url: "https://farawaystech.dev",
+              serviceType: [
+                "รับทำเว็บไซต์",
+                "รับทำแอปมือถือ",
+                "รับเขียนโปรแกรม",
+                "Software Development",
+                "Mobile App Development",
+                "Web Development",
+              ],
+              areaServed: { "@type": "Country", name: "Thailand" },
+              knowsLanguage: ["th", "en"],
+              priceRange: "$$",
+            }),
           }}
         />
       </head>
