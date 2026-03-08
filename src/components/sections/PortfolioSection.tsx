@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import { content, type Lang } from "@/lib/content";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type PanInfo } from "framer-motion";
 
 interface PortfolioSectionProps {
   lang: Lang;
@@ -18,9 +18,33 @@ const screenshots = [
   { src: "/portfolio/qrforpay-settings.png", key: "settings" },
 ] as const;
 
+const SWIPE_THRESHOLD = 50;
+
 export default function PortfolioSection({ lang }: PortfolioSectionProps) {
   const t = content.portfolio[lang];
   const [activeIdx, setActiveIdx] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const constraintsRef = useRef(null);
+
+  const goTo = (newIdx: number, dir: number) => {
+    if (newIdx < 0 || newIdx >= screenshots.length) return;
+    setDirection(dir);
+    setActiveIdx(newIdx);
+  };
+
+  const handleDragEnd = (_: unknown, info: PanInfo) => {
+    if (info.offset.x < -SWIPE_THRESHOLD) {
+      goTo(activeIdx + 1, 1);
+    } else if (info.offset.x > SWIPE_THRESHOLD) {
+      goTo(activeIdx - 1, -1);
+    }
+  };
+
+  const variants = {
+    enter: (dir: number) => ({ x: dir > 0 ? 200 : -200, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (dir: number) => ({ x: dir > 0 ? -200 : 200, opacity: 0 }),
+  };
 
   return (
     <section id="portfolio" className="py-20 px-4 sm:px-6">
@@ -51,48 +75,62 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
             <div className="p-4 sm:p-6 md:p-8">
               {/* Project Info */}
               <div className="flex flex-col md:flex-row gap-8">
-                {/* Left: Phone mockup */}
+                {/* Left: Phone mockup - swipeable */}
                 <div className="flex flex-col items-center md:w-1/3">
-                  <div className="relative w-[220px] h-[440px] sm:w-[260px] sm:h-[520px] rounded-[2rem] border-4 border-border bg-black overflow-hidden shadow-2xl">
-                    <AnimatePresence mode="wait">
+                  <div
+                    ref={constraintsRef}
+                    className="relative w-[240px] h-[420px] sm:w-[280px] sm:h-[490px] rounded-[1.5rem] border-[3px] border-border/60 bg-[#1a1a1a] overflow-hidden shadow-2xl select-none cursor-grab active:cursor-grabbing"
+                  >
+                    <AnimatePresence mode="wait" custom={direction}>
                       <motion.div
                         key={activeIdx}
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.95 }}
-                        transition={{ duration: 0.3 }}
-                        className="w-full h-full"
+                        custom={direction}
+                        variants={variants}
+                        initial="enter"
+                        animate="center"
+                        exit="exit"
+                        transition={{ duration: 0.25, ease: "easeInOut" }}
+                        drag="x"
+                        dragConstraints={{ left: 0, right: 0 }}
+                        dragElastic={0.3}
+                        onDragEnd={handleDragEnd}
+                        className="absolute inset-0 touch-manipulation"
                       >
                         <Image
                           src={screenshots[activeIdx].src}
                           alt={t.screens[activeIdx]}
                           fill
-                          className="object-cover"
-                          sizes="260px"
+                          className="object-cover object-center"
+                          style={{
+                            objectPosition: "center 8%",
+                            transform: "scale(1.12)",
+                          }}
+                          sizes="280px"
+                          draggable={false}
                         />
                       </motion.div>
                     </AnimatePresence>
                   </div>
 
-                  {/* Screen selector dots */}
-                  <div className="flex gap-2 mt-4">
-                    {screenshots.map((_, idx) => (
-                      <button
-                        key={idx}
-                        type="button"
-                        onClick={() => setActiveIdx(idx)}
-                        className={`w-2.5 h-2.5 rounded-full transition-all touch-manipulation ${
-                          idx === activeIdx
-                            ? "bg-accent-green scale-125"
-                            : "bg-border hover:bg-text-secondary"
-                        }`}
-                        aria-label={t.screens[idx]}
-                      />
-                    ))}
+                  {/* Screen indicator dots + label */}
+                  <div className="flex items-center gap-3 mt-4">
+                    <div className="flex gap-1.5">
+                      {screenshots.map((_, idx) => (
+                        <button
+                          key={idx}
+                          type="button"
+                          onClick={() => goTo(idx, idx > activeIdx ? 1 : -1)}
+                          className={`rounded-full transition-all duration-300 touch-manipulation ${
+                            idx === activeIdx
+                              ? "w-6 h-2 bg-accent-green"
+                              : "w-2 h-2 bg-border hover:bg-text-secondary"
+                          }`}
+                          aria-label={t.screens[idx]}
+                        />
+                      ))}
+                    </div>
                   </div>
-
-                  {/* Screen label */}
-                  <p className="text-xs text-text-secondary font-mono mt-2">
+                  <p className="text-xs text-text-secondary font-mono mt-1.5">
                     {t.screens[activeIdx]}
                   </p>
                 </div>
