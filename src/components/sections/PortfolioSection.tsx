@@ -21,10 +21,6 @@ const projectScreenshots = {
     { src: "/portfolio/wyckoff-landing.webp", key: "landing" },
     { src: "/portfolio/wyckoff-pricing.webp", key: "pricing" },
   ],
-  runawaytech: [
-    { src: "/portfolio/runaway-services.webp", key: "services" },
-    { src: "/portfolio/runaway-contact.webp", key: "contact" },
-  ],
 } as const;
 
 const SWIPE_THRESHOLD = 50;
