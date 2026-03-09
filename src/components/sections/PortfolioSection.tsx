@@ -333,6 +333,21 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
                             </span>
                           ))}
                         </div>
+
+                        {/* Visit link */}
+                        {(project as { url?: string }).url && (
+                          <a
+                            href={(project as { url?: string }).url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 mt-6 px-4 py-2 rounded-md text-sm font-sans font-medium bg-accent-green/10 text-accent-green border border-accent-green/20 hover:bg-accent-green/20 transition-colors w-fit"
+                          >
+                            {lang === "th" ? "ดูเว็บจริง" : "Visit Site"}
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
