@@ -242,15 +242,16 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
     <section id="portfolio" className="py-20 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
-          <p className="font-mono text-text-secondary text-sm mb-2">
+          <p className="text-accent-green font-medium text-sm mb-3 tracking-wide uppercase">
             {t.title}
           </p>
-          <h2 className="text-3xl md:text-4xl font-sans font-bold text-text-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
             {t.heading}
           </h2>
-          <p className="text-text-secondary font-sans max-w-2xl mb-12">
+          <p className="text-text-secondary font-sans max-w-2xl mb-4">
             {t.subtitle}
           </p>
+          <div className="w-12 h-0.5 bg-accent-green/40 mb-14" />
         </ScrollReveal>
 
         <div className="flex flex-col gap-8">
@@ -289,8 +290,8 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
                       {/* Right: Project details */}
                       <div className="flex-1 flex flex-col justify-center">
                         <div className="flex items-center gap-3 mb-4">
-                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-accent-green/10 text-accent-green border border-accent-green/20">
-                            <span className="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse" />
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-status-green/10 text-status-green border border-status-green/20">
+                            <span className="w-1.5 h-1.5 rounded-full bg-status-green animate-pulse" />
                             {project.status}
                           </span>
                           <span className="text-xs text-text-secondary font-mono">
@@ -298,7 +299,7 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
                           </span>
                         </div>
 
-                        <h3 className="text-2xl md:text-3xl font-sans font-bold text-text-primary mb-2">
+                        <h3 className="text-2xl md:text-3xl font-bold text-text-primary mb-2">
                           {project.projectName}
                         </h3>
                         <p className="text-text-secondary font-sans mb-6 leading-relaxed">

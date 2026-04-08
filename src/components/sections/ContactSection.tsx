@@ -1,7 +1,6 @@
 "use client";
 
 import { content, type Lang } from "@/lib/content";
-import TerminalWindow from "@/components/ui/TerminalWindow";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import Button from "@/components/ui/Button";
 
@@ -15,32 +14,32 @@ export default function ContactSection({ lang }: ContactSectionProps) {
   const t = content.contact[lang];
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6">
+    <section id="contact" className="py-24 px-4 sm:px-6">
       <div className="max-w-2xl mx-auto text-center">
         <ScrollReveal>
-          <p className="text-accent-green font-mono text-sm mb-2">{t.title}</p>
-          <h2 className="text-3xl md:text-4xl font-sans font-bold text-text-primary">
+          <p className="text-accent-green font-medium text-sm mb-3 tracking-wide uppercase">
+            {t.title}
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-3">
             {t.heading}
           </h2>
-          <p className="mt-3 text-text-secondary font-sans">{t.subtitle}</p>
+          <p className="text-text-secondary font-sans text-lg">{t.subtitle}</p>
         </ScrollReveal>
 
         <ScrollReveal delay={0.2}>
-          <div className="mt-10">
-            <TerminalWindow title="start-project">
-              <div className="flex flex-col items-center gap-6 py-6">
-                <p className="font-mono text-xs sm:text-sm text-text-secondary break-all">
-                  <span className="text-accent-green">$</span> open smart-requirement-form
-                </p>
-                <Button
-                  href={FORM_URL}
-                  variant="primary"
-                  className="text-base px-8 py-4"
-                >
-                  {t.cta}
-                </Button>
-              </div>
-            </TerminalWindow>
+          <div className="mt-12 rounded-xl border border-border bg-bg-card p-8 md:p-10 card-elevated">
+            <p className="text-text-secondary font-sans mb-6">
+              {lang === "th"
+                ? "กรอกข้อมูลสั้นๆ เพื่อให้เราเข้าใจโปรเจกต์ของคุณ"
+                : "Fill out a brief form so we can understand your project"}
+            </p>
+            <Button
+              href={FORM_URL}
+              variant="primary"
+              className="text-base px-10 py-4"
+            >
+              {t.cta}
+            </Button>
           </div>
         </ScrollReveal>
 
@@ -50,7 +49,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
               {t.emailLabel}{" "}
               <a
                 href={`mailto:${t.email}`}
-                className="text-accent-blue hover:underline"
+                className="text-accent-green hover:underline underline-offset-2"
               >
                 {t.email}
               </a>

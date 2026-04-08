@@ -22,9 +22,9 @@ export default function Button({
   const base =
     "inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-colors text-sm";
   const variants = {
-    primary: "bg-accent-green text-bg-primary hover:bg-accent-green/90",
+    primary: "bg-accent-green text-white hover:bg-accent-green/90 shadow-sm shadow-accent-green/20",
     secondary:
-      "border border-border text-text-primary hover:border-accent-blue hover:text-accent-blue",
+      "border border-border text-text-primary hover:border-accent-green/50 hover:text-accent-green",
   };
 
   const cls = `${base} ${variants[variant]} ${className}`;

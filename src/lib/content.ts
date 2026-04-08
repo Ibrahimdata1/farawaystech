@@ -41,7 +41,7 @@ export const content = {
   },
   services: {
     th: {
-      title: "// services",
+      title: "Services",
       heading: "บริการของเรา",
       items: [
         {
@@ -72,7 +72,7 @@ export const content = {
       ],
     },
     en: {
-      title: "// services",
+      title: "Services",
       heading: "Our Services",
       items: [
         {
@@ -105,7 +105,7 @@ export const content = {
   },
   portfolio: {
     th: {
-      title: "// portfolio",
+      title: "Portfolio",
       heading: "ผลงานของเรา",
       subtitle:
         "โปรเจกต์จริงที่เราพัฒนาและส่งมอบให้ลูกค้า — พิสูจน์ว่าเราทำงานจริง ส่งมอบจริง",
@@ -173,7 +173,7 @@ export const content = {
       ],
     },
     en: {
-      title: "// portfolio",
+      title: "Portfolio",
       heading: "Our Work",
       subtitle:
         "Real projects we've built and delivered — proof that we ship quality software.",
@@ -243,7 +243,7 @@ export const content = {
   },
   about: {
     th: {
-      title: "// about",
+      title: "About",
       heading: "เกี่ยวกับเรา",
       description:
         "เราคือกลุ่มเพื่อนนักพัฒนามืออาชีพ ที่เชื่อว่าซอฟต์แวร์คุณภาพไม่จำเป็นต้องแพง เราทำงานด้วยมาตรฐานสูง ส่งมอบงานเร็ว ในราคาที่เข้าถึงได้",
@@ -260,7 +260,7 @@ export const content = {
       },
     },
     en: {
-      title: "// about",
+      title: "About",
       heading: "About Us",
       description:
         "We're a group of professional developer friends who believe quality software doesn't have to be expensive. High standards, fast delivery, accessible pricing.",
@@ -279,7 +279,7 @@ export const content = {
   },
   process: {
     th: {
-      title: "// process",
+      title: "Process",
       heading: "ขั้นตอนการทำงาน",
       steps: [
         {
@@ -310,7 +310,7 @@ export const content = {
       ],
     },
     en: {
-      title: "// process",
+      title: "Process",
       heading: "Our Process",
       steps: [
         {
@@ -343,7 +343,7 @@ export const content = {
   },
   whyUs: {
     th: {
-      title: "// why-us",
+      title: "Why Us",
       heading: "ทำไมต้องเลือกเรา",
       items: [
         {
@@ -369,7 +369,7 @@ export const content = {
       ],
     },
     en: {
-      title: "// why-us",
+      title: "Why Us",
       heading: "Why Choose Us",
       items: [
         {
@@ -397,11 +397,11 @@ export const content = {
   },
   techStack: {
     th: {
-      title: "// tech-stack",
+      title: "Tech Stack",
       heading: "เทคโนโลยีที่เราใช้",
     },
     en: {
-      title: "// tech-stack",
+      title: "Tech Stack",
       heading: "Our Tech Stack",
     },
     categories: [
@@ -439,22 +439,44 @@ export const content = {
   },
   contact: {
     th: {
-      title: "// contact",
+      title: "Contact",
       heading: "เริ่มโปรเจกต์กับเรา",
       subtitle:
         "บอกเราเกี่ยวกับโปรเจกต์ของคุณ แค่กรอกฟอร์มสั้นๆ แล้วเราจะติดต่อกลับโดยเร็ว",
       cta: "กรอกแบบฟอร์มเริ่มโปรเจกต์",
-      email: "hello@runawaytech.dev",
+      email: "contact.runawaytech@gmail.com",
       emailLabel: "หรือส่งอีเมลหาเราได้ที่",
     },
     en: {
-      title: "// contact",
+      title: "Contact",
       heading: "Start Your Project",
       subtitle:
         "Tell us about your project. Fill out a quick form and we'll get back to you shortly.",
       cta: "Fill Out Project Brief",
-      email: "hello@runawaytech.dev",
+      email: "contact.runawaytech@gmail.com",
       emailLabel: "Or email us at",
+    },
+  },
+  blog: {
+    th: {
+      title: "บล็อก",
+      heading: "บทความ",
+      subtitle: "เรื่องน่ารู้เกี่ยวกับเทคโนโลยีและการพัฒนาซอฟต์แวร์",
+      readMore: "อ่านต่อ",
+      backToHome: "กลับหน้าหลัก",
+      backToBlog: "กลับหน้าบทความ",
+      publishedOn: "เผยแพร่เมื่อ",
+      minRead: "นาที",
+    },
+    en: {
+      title: "Blog",
+      heading: "Articles",
+      subtitle: "Insights on technology and software development",
+      readMore: "Read more",
+      backToHome: "Back to Home",
+      backToBlog: "Back to Blog",
+      publishedOn: "Published on",
+      minRead: "min read",
     },
   },
   footer: {

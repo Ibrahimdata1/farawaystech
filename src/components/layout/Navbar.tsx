@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { content, type Lang } from "@/lib/content";
 import { NAV_ITEMS } from "@/lib/constants";
@@ -73,10 +74,28 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-bg-primary/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 py-4">
-        {/* Logo */}
-        <a href="#" className="font-mono text-2xl font-bold">
-          <span className="text-accent-green">RunAway</span>
-          <span className="text-text-primary">Tech</span>
+        {/* Logo — image for dark, CSS text for light */}
+        <a href="#" className="flex items-center">
+          <span className="relative w-64 h-10 overflow-hidden hidden dark-logo">
+            <Image
+              src="/logo.png"
+              alt="RunAwayTech"
+              fill
+              className="object-cover"
+              style={{ mixBlendMode: 'lighten', objectPosition: 'center 68%' }}
+              priority
+            />
+          </span>
+          <span className="relative w-64 h-10 overflow-hidden hidden light-logo">
+            <Image
+              src="/logo.png"
+              alt="RunAwayTech"
+              fill
+              className="object-cover light-logo-img"
+              style={{ objectPosition: 'center 68%' }}
+              priority
+            />
+          </span>
         </a>
 
         {/* Desktop nav */}
@@ -85,17 +104,26 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
             const label = nav[navKeyMap[item.id]];
             const isActive = activeSection === item.id;
             return (
-              <a
-                key={item.id}
-                href={item.href}
-                className={`text-base transition-colors ${
-                  isActive
-                    ? "text-accent-green"
-                    : "text-text-secondary hover:text-text-primary"
-                }`}
-              >
-                {label}
-              </a>
+              <React.Fragment key={item.id}>
+                {item.id === "contact" && (
+                  <a
+                    href="/blog"
+                    className="text-base text-text-secondary transition-colors hover:text-text-primary"
+                  >
+                    {content.blog[lang].title}
+                  </a>
+                )}
+                <a
+                  href={item.href}
+                  className={`text-base transition-colors ${
+                    isActive
+                      ? "text-accent-green"
+                      : "text-text-secondary hover:text-text-primary"
+                  }`}
+                >
+                  {label}
+                </a>
+              </React.Fragment>
             );
           })}
           <button
@@ -177,26 +205,36 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
                 const label = nav[navKeyMap[item.id]];
                 const isActive = activeSection === item.id;
                 return (
-                  <button
-                    key={item.id}
-                    type="button"
-                    onClick={() => {
-                      setMobileOpen(false);
-                      setTimeout(() => {
-                        const el = document.querySelector(item.href) as HTMLElement | null;
-                        if (el) {
-                          window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: "smooth" });
-                        }
-                      }, 250);
-                    }}
-                    className={`w-full text-left text-base transition-colors py-2 min-h-[44px] flex items-center touch-manipulation ${
-                      isActive
-                        ? "text-accent-green"
-                        : "text-text-secondary hover:text-text-primary"
-                    }`}
-                  >
-                    {label}
-                  </button>
+                  <React.Fragment key={item.id}>
+                    {item.id === "contact" && (
+                      <a
+                        href="/blog"
+                        onClick={() => setMobileOpen(false)}
+                        className="w-full text-left text-base transition-colors py-2 min-h-[44px] flex items-center touch-manipulation text-text-secondary hover:text-text-primary"
+                      >
+                        {content.blog[lang].title}
+                      </a>
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setMobileOpen(false);
+                        setTimeout(() => {
+                          const el = document.querySelector(item.href) as HTMLElement | null;
+                          if (el) {
+                            window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: "smooth" });
+                          }
+                        }, 250);
+                      }}
+                      className={`w-full text-left text-base transition-colors py-2 min-h-[44px] flex items-center touch-manipulation ${
+                        isActive
+                          ? "text-accent-green"
+                          : "text-text-secondary hover:text-text-primary"
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  </React.Fragment>
                 );
               })}
             </div>

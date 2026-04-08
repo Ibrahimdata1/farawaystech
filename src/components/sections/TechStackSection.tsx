@@ -1,7 +1,6 @@
 "use client";
 
 import { content, type Lang } from "@/lib/content";
-import TerminalWindow from "@/components/ui/TerminalWindow";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 interface TechStackSectionProps {
@@ -13,41 +12,39 @@ export default function TechStackSection({ lang }: TechStackSectionProps) {
   const categories = content.techStack.categories;
 
   return (
-    <section id="tech-stack" className="py-20 px-4 sm:px-6">
+    <section id="tech-stack" className="py-24 px-4 sm:px-6 section-alt">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal>
-          <p className="text-accent-green font-mono text-sm mb-2">{t.title}</p>
-          <h2 className="text-3xl md:text-4xl font-sans font-bold text-text-primary">
+          <p className="text-accent-green font-medium text-sm mb-3 tracking-wide uppercase">
+            {t.title}
+          </p>
+          <h2 className="text-3xl md:text-4xl font-sans font-bold text-text-primary mb-4">
             {t.heading}
           </h2>
+          <div className="w-12 h-0.5 bg-accent-green/40 mb-14" />
         </ScrollReveal>
 
-        <ScrollReveal delay={0.2}>
-          <div className="mt-12">
-            <TerminalWindow title="tech-stack.sh">
-              <div className="space-y-6">
-                {categories.map((cat, i) => (
-                  <div key={i}>
-                    <p className="font-mono text-sm text-text-secondary mb-2">
-                      <span className="text-accent-green">$</span> ls{" "}
-                      <span className={cat.color}>{cat.name}</span>
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {cat.techs.map((tech) => (
-                        <span
-                          key={tech}
-                          className="bg-bg-card-hover border border-border rounded-full px-3 py-1 text-sm text-text-primary font-sans"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {categories.map((cat, i) => (
+            <ScrollReveal key={i} delay={i * 0.08}>
+              <div className="rounded-xl border border-border bg-bg-card p-5 card-elevated h-full">
+                <p className={`font-medium text-sm mb-3 ${cat.color}`}>
+                  {cat.name}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {cat.techs.map((tech) => (
+                    <span
+                      key={tech}
+                      className="bg-bg-card-hover border border-border/50 rounded-md px-2.5 py-1 text-xs text-text-secondary font-sans"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </TerminalWindow>
-          </div>
-        </ScrollReveal>
+            </ScrollReveal>
+          ))}
+        </div>
       </div>
     </section>
   );

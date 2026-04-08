@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Noto_Sans_Thai } from "next/font/google";
+import { Inter, JetBrains_Mono, Noto_Sans_Thai, Geist } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const inter = Inter({
   variable: "--font-inter",
@@ -18,7 +21,7 @@ const notoSansThai = Noto_Sans_Thai({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://runawaytech.vercel.app"),
+  metadataBase: new URL("https://runawaytech.co"),
   title: "RunAway Tech - รับทำเว็บไซต์ รับทำแอป Software House คุณภาพ",
   description:
     "รับทำเว็บไซต์ รับทำแอปมือถือ รับเขียนโปรแกรม ระบบหลังบ้าน POS AI Agent ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้ ส่งงานไว มีผลงานจริง",
@@ -42,13 +45,13 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "RunAway Tech" }],
   alternates: {
-    canonical: "https://runawaytech.vercel.app",
+    canonical: "https://runawaytech.co",
   },
   openGraph: {
     title: "RunAway Tech - รับทำเว็บไซต์ รับทำแอป Software House",
     description:
       "รับทำเว็บไซต์ รับทำแอปมือถือ รับเขียนโปรแกรม ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้ มีผลงานจริง",
-    url: "https://runawaytech.vercel.app",
+    url: "https://runawaytech.co",
     siteName: "RunAway Tech",
     type: "website",
     locale: "th_TH",
@@ -67,7 +70,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="th" data-theme="dark" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="th" data-theme="dark" className={cn("scroll-smooth", "font-sans", geist.variable)} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -92,7 +95,7 @@ export default function RootLayout({
               name: "RunAway Tech",
               description:
                 "รับทำเว็บไซต์ รับทำแอปมือถือ รับเขียนโปรแกรม ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้",
-              url: "https://runawaytech.vercel.app",
+              url: "https://runawaytech.co",
               serviceType: [
                 "รับทำเว็บไซต์",
                 "รับทำแอปมือถือ",
