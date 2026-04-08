@@ -72,7 +72,7 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
   const nav = content.nav[lang];
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-border bg-bg-primary/80 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 border-b border-border bg-bg-primary/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 py-4">
         {/* Logo — image for dark, CSS text for light */}
         <a href="#" className="flex items-center">
@@ -164,28 +164,23 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
             className="text-text-secondary hover:text-text-primary min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation"
             aria-label="Toggle menu"
           >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {mobileOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
+            <div className="relative w-5 h-4 flex flex-col justify-between">
+              <motion.span
+                animate={mobileOpen ? { rotate: 45, y: 7.5 } : { rotate: 0, y: 0 }}
+                transition={{ duration: 0.2 }}
+                className="block h-0.5 w-5 bg-current origin-center"
+              />
+              <motion.span
+                animate={mobileOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
+                transition={{ duration: 0.15 }}
+                className="block h-0.5 w-5 bg-current"
+              />
+              <motion.span
+                animate={mobileOpen ? { rotate: -45, y: -7.5 } : { rotate: 0, y: 0 }}
+                transition={{ duration: 0.2 }}
+                className="block h-0.5 w-5 bg-current origin-center"
+              />
+            </div>
           </button>
         </div>
       </div>

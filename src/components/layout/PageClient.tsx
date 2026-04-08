@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import type { Lang } from "@/lib/content";
 import MotionProvider from "@/components/providers/MotionProvider";
+import BoxLoader from "@/components/ui/BoxLoader";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
@@ -17,6 +18,7 @@ import ContactSection from "@/components/sections/ContactSection";
 type Theme = "dark" | "light";
 
 export default function PageClient() {
+  const [loading, setLoading] = useState(true);
   const [lang, setLang] = useState<Lang>("th");
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window === "undefined") return "dark";
@@ -33,6 +35,11 @@ export default function PageClient() {
     document.documentElement.lang = lang;
   }, [lang]);
 
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 800);
+    return () => clearTimeout(timer);
+  }, []);
+
   const toggleLang = useCallback(() => {
     setLang((prev) => (prev === "th" ? "en" : "th"));
   }, []);
@@ -40,6 +47,14 @@ export default function PageClient() {
   const toggleTheme = useCallback(() => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   }, []);
+
+  if (loading) {
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-bg-primary">
+        <BoxLoader />
+      </div>
+    );
+  }
 
   return (
     <MotionProvider>

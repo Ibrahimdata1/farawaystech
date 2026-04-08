@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { content, type Lang } from "@/lib/content";
 import StatusBadge from "@/components/ui/StatusBadge";
 import Button from "@/components/ui/Button";
+import { FloatingPaths } from "@/components/ui/BackgroundPaths";
+import { SparklesCore } from "@/components/ui/SparklesCore";
 
 interface HeroSectionProps {
   lang: Lang;
@@ -14,9 +16,24 @@ export default function HeroSection({ lang }: HeroSectionProps) {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 hero-glow overflow-hidden">
-      {/* Decorative gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-green/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-orange/5 rounded-full blur-3xl" />
+      {/* Animated background paths */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <FloatingPaths position={1} />
+        <FloatingPaths position={-1} />
+      </div>
+      {/* Sparkle particles */}
+      <div className="absolute inset-0 pointer-events-none">
+        <SparklesCore
+          id="hero-sparkles"
+          background="transparent"
+          minSize={0.4}
+          maxSize={1.2}
+          particleDensity={40}
+          speed={0.5}
+          particleColor="#3b82f6"
+          className="w-full h-full"
+        />
+      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 16 }}

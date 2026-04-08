@@ -2,7 +2,16 @@
 
 import { content, type Lang } from "@/lib/content";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import ServiceIcon from "@/components/ui/ServiceIcon";
+import FeatureCard from "@/components/ui/FeatureCard";
+import { ShieldCheck, Zap, BadgeDollarSign, Users } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+const whyUsIconMap: Record<string, LucideIcon> = {
+  quality: ShieldCheck,
+  speed: Zap,
+  price: BadgeDollarSign,
+  team: Users,
+};
 
 interface WhyUsSectionProps {
   lang: Lang;
@@ -24,21 +33,18 @@ export default function WhyUsSection({ lang }: WhyUsSectionProps) {
           <div className="w-12 h-0.5 bg-accent-green/40 mb-14" />
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {t.items.map((item, i) => (
-            <ScrollReveal key={i} delay={i * 0.1}>
-              <div className="group rounded-xl border border-border bg-bg-card p-6 hover:bg-bg-card-hover hover:border-accent-green/20 transition-all duration-300 card-elevated h-full">
-                <ServiceIcon name={item.icon} className="mb-4" />
-                <h3 className="text-lg font-semibold text-text-primary mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-text-secondary font-sans leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
+        <ScrollReveal delay={0.2}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 divide-x divide-y divide-dashed divide-border border border-dashed border-border rounded-xl overflow-hidden">
+            {t.items.map((item, i) => (
+              <FeatureCard
+                key={i}
+                icon={whyUsIconMap[item.icon] ?? ShieldCheck}
+                title={item.title}
+                description={item.desc}
+              />
+            ))}
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
