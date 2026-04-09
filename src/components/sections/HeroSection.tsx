@@ -82,17 +82,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
             {t.subtitle}
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
-            className="mt-10 flex items-center gap-4"
-          >
-            <JolyButton href="#contact">{t.cta}</JolyButton>
-            <JolyButton href="#services" variant="outline">
-              {lang === "th" ? "ดู Solutions" : "Our Solutions"}
-            </JolyButton>
-          </motion.div>
+          {/* buttons removed */}
         </div>
       </div>
     </section>
