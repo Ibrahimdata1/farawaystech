@@ -22,7 +22,7 @@ import QuoteBanner from "@/components/ui/QuoteBanner";
 type Theme = "dark" | "light";
 
 export default function PageClient() {
-  const [loading, setLoading] = useState(true);
+  const [loading] = useState(false);
   const [lang, setLang] = useState<Lang>("th");
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window === "undefined") return "dark";
@@ -39,10 +39,7 @@ export default function PageClient() {
     document.documentElement.lang = lang;
   }, [lang]);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 800);
-    return () => clearTimeout(timer);
-  }, []);
+  // BoxLoader removed for faster page load
 
   const toggleLang = useCallback(() => {
     setLang((prev) => (prev === "th" ? "en" : "th"));
@@ -86,9 +83,9 @@ export default function PageClient() {
             <SparklesCore
               id="bottom-sparkles"
               background="transparent"
-              minSize={0.6}
-              maxSize={2}
-              particleDensity={100}
+              minSize={0.4}
+              maxSize={1.4}
+              particleDensity={50}
               speed={1}
               particleColor="#60a5fa"
               className="w-full h-full"

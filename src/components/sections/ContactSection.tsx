@@ -4,7 +4,7 @@ import { content, type Lang } from "@/lib/content";
 import { motion } from "framer-motion";
 import { Mail, Clock, ArrowUpRight } from "lucide-react";
 import JolyButton from "@/components/ui/JolyButton";
-// background shared with SEO section
+// background handled by parent wrapper sparkles
 
 interface ContactSectionProps {
   lang: Lang;
