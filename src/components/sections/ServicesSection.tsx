@@ -79,7 +79,7 @@ export default function ServicesSection({ lang }: ServicesSectionProps) {
           <ContainerAnimated className="text-3xl md:text-4xl lg:text-[2.6rem] font-bold tracking-tight text-text-primary">
             {t.heading}
           </ContainerAnimated>
-          <ContainerAnimated className="my-5 text-base text-text-secondary leading-relaxed md:text-lg">
+          <ContainerAnimated className="my-5 text-base text-text-secondary leading-relaxed lg:text-lg">
             {lang === "th"
               ? "เราช่วยธุรกิจลดต้นทุน เพิ่มลูกค้า และทำให้ระบบทำงานแทนคน — ด้วย solution ที่ออกแบบมาเพื่อธุรกิจคุณโดยเฉพาะ"
               : "We help businesses cut costs, gain customers, and automate operations — with solutions built specifically for your business"}

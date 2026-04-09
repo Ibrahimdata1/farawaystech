@@ -75,7 +75,7 @@ test.describe("Theme toggle on mobile", () => {
   test("theme button is visible and works", async ({ page }) => {
     await page.goto("/");
     const themeBtn = page
-      .locator(".md\\:hidden button[aria-label]")
+      .locator(".lg\\:hidden button[aria-label]")
       .filter({ hasText: "" })
       .first();
     await expect(themeBtn).toBeVisible();
@@ -90,7 +90,7 @@ test.describe("Theme toggle on mobile", () => {
 test.describe("Language toggle on mobile", () => {
   test("lang button is visible and switches language", async ({ page }) => {
     await page.goto("/");
-    const langBtn = page.locator(".md\\:hidden").getByRole("button", { name: /Switch to (Thai|English)/ });
+    const langBtn = page.locator(".lg\\:hidden").getByRole("button", { name: /Switch to (Thai|English)/ });
     await expect(langBtn).toBeVisible();
     const before = await langBtn.textContent();
     await langBtn.click();
@@ -112,7 +112,7 @@ test.describe("Page renders correctly on mobile", () => {
 
   test("desktop nav is hidden on mobile", async ({ page }) => {
     await page.goto("/");
-    const desktopNav = page.locator(".hidden.md\\:flex");
+    const desktopNav = page.locator(".hidden.lg\\:flex");
     await expect(desktopNav).not.toBeVisible();
   });
 

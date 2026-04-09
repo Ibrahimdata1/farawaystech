@@ -21,7 +21,7 @@ export default function WhyUsSection({ lang }: WhyUsSectionProps) {
   const t = content.whyUs[lang];
 
   return (
-    <section id="why-us" className="py-24 px-4 sm:px-6">
+    <section id="why-us" className="py-24 px-4 sm:px-6 overflow-x-hidden">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal>
           <p className="text-accent-green font-medium text-sm mb-3 tracking-wide uppercase">

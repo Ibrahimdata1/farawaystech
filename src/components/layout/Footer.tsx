@@ -13,8 +13,8 @@ export default function Footer({ lang }: FooterProps) {
   return (
     <footer className="border-t border-border bg-bg-primary px-4 sm:px-6 py-12">
       <div className="mx-auto max-w-6xl">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-col items-center md:items-start gap-2">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col items-center lg:items-start gap-2">
             <a href="#" className="flex items-center">
               <span className="relative w-48 h-8 overflow-hidden dark-logo">
                 <Image
@@ -37,7 +37,7 @@ export default function Footer({ lang }: FooterProps) {
             </a>
             <p className="text-sm text-text-secondary">{footer.tagline}</p>
           </div>
-          <div className="flex flex-col items-center md:items-end gap-3">
+          <div className="flex flex-col items-center lg:items-end gap-3">
             <div className="flex items-center gap-4">
               <a
                 href="mailto:contact.runawaytech@gmail.com"

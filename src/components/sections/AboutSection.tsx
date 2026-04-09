@@ -12,8 +12,8 @@ export default function AboutSection({ lang }: AboutSectionProps) {
   const json = data.jsonDisplay;
 
   return (
-    <section id="about" className="py-24 px-4 sm:px-6 section-alt">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="py-24 px-4 sm:px-6 section-alt overflow-x-hidden">
+      <div className="max-w-6xl mx-auto overflow-hidden">
         <ScrollReveal>
           <p className="text-accent-green font-medium text-sm mb-3 tracking-wide uppercase">
             {data.title}
@@ -24,7 +24,7 @@ export default function AboutSection({ lang }: AboutSectionProps) {
           <div className="w-12 h-0.5 bg-accent-green/40 mb-12" />
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left: Description + Highlight Cards */}
           <ScrollReveal direction="left">
             <p className="text-text-secondary text-lg leading-relaxed mb-8">
@@ -49,7 +49,7 @@ export default function AboutSection({ lang }: AboutSectionProps) {
 
           {/* Right: Company Info Card */}
           <ScrollReveal direction="right" delay={0.2}>
-            <div className="glass-card p-6 sm:p-8">
+            <div className="glass-card p-5 sm:p-8 overflow-hidden">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-accent-green/10 flex items-center justify-center">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-accent-green">

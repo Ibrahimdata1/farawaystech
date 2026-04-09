@@ -56,7 +56,7 @@ function PhoneMockup({
   };
 
   return (
-    <div className="flex flex-col items-center md:w-1/3">
+    <div className="flex flex-col items-center lg:w-1/3">
       <div
         ref={constraintsRef}
         className="relative w-[220px] h-[450px] sm:w-[260px] sm:h-[530px] overflow-hidden select-none cursor-grab active:cursor-grabbing"
@@ -154,7 +154,7 @@ function BrowserMockup({
   };
 
   return (
-    <div className="flex flex-col items-center md:w-2/5">
+    <div className="flex flex-col items-center lg:w-2/5">
       <div className="w-full max-w-[480px] rounded-xl border border-border/50 overflow-hidden bg-bg-card/50 shadow-2xl shadow-accent-green/5">
         <div className="flex items-center gap-2 px-4 py-2.5 bg-bg-card border-b border-border/50">
           <div className="flex gap-1.5">
@@ -274,8 +274,8 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
                     </div>
                   </div>
 
-                  <div className="relative p-6 sm:p-8 md:p-10">
-                    <div className="flex flex-col md:flex-row gap-10 items-center">
+                  <div className="relative p-6 sm:p-8 lg:p-10">
+                    <div className="flex flex-col lg:flex-row gap-10 items-center">
                       {/* Left: Mockup */}
                       {project.type === "mobile" ? (
                         <PhoneMockup
@@ -302,7 +302,7 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
                           </span>
                         </div>
 
-                        <h3 className="text-2xl md:text-3xl font-bold text-text-primary mb-3 tracking-tight">
+                        <h3 className="text-2xl lg:text-3xl font-bold text-text-primary mb-3 tracking-tight">
                           {project.projectName}
                         </h3>
                         <p className="text-text-secondary mb-8 leading-relaxed text-[15px]">

@@ -20,7 +20,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
       {/* no separate background — shared with SEO section wrapper */}
 
       <div className="max-w-5xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
           {/* Left: Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
