@@ -16,7 +16,7 @@ export default function Footer({ lang }: FooterProps) {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col items-center md:items-start gap-2">
             <a href="#" className="flex items-center">
-              <span className="relative w-48 h-8 overflow-hidden dark-logo">
+              <span className="relative w-48 h-8 overflow-hidden dark-logo bg-bg-primary">
                 <Image
                   src="/logo.png"
                   alt="RunAwayTech"

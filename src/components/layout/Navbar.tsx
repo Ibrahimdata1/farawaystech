@@ -76,7 +76,7 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 py-4">
         {/* Logo — image for dark, CSS text for light */}
         <a href="#" className="flex items-center">
-          <span className="relative w-64 h-10 overflow-hidden dark-logo bg-transparent" style={{ display: 'block' }}>
+          <span className="relative w-64 h-10 overflow-hidden dark-logo bg-bg-primary" style={{ display: 'block' }}>
             <Image
               src="/logo.png"
               alt="RunAwayTech"
@@ -86,7 +86,7 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
               priority
             />
           </span>
-          <span className="relative w-64 h-10 overflow-hidden light-logo" style={{ display: 'none' }}>
+          <span className="relative w-64 h-10 overflow-hidden light-logo bg-bg-primary" style={{ display: 'none' }}>
             <Image
               src="/logo.png"
               alt="RunAwayTech"
