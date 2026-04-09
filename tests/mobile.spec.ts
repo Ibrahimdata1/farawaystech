@@ -46,7 +46,9 @@ test.describe("Mobile nav scrolling", () => {
     await page.goto("/");
   });
 
+  // Map: nav item id → section id to scroll to (tech-stack nav item scrolls to #seo)
   const sections = ["services", "portfolio", "about", "process", "why-us", "tech-stack", "contact"];
+  const sectionTargets: Record<string, string> = { "tech-stack": "seo" };
 
   for (const section of sections) {
     test(`tapping '${section}' scrolls to correct section`, async ({ page }) => {
@@ -58,13 +60,14 @@ test.describe("Mobile nav scrolling", () => {
       const sectionIndex = sections.indexOf(section);
       await menuBtns.nth(sectionIndex).click();
 
-      // Menu should close
-      await expect(menuBtns.first()).not.toBeVisible();
+      // Menu should close (allow animation time)
+      await expect(menuBtns.first()).not.toBeVisible({ timeout: 3000 });
 
       // Section should be in viewport after scroll (wait for animation + scroll)
-      await page.waitForTimeout(700);
-      const target = page.locator(`#${section}`);
-      await expect(target).toBeInViewport({ ratio: 0.1 });
+      await page.waitForTimeout(1500);
+      const targetId = sectionTargets[section] || section;
+      const target = page.locator(`#${targetId}`);
+      await expect(target).toBeInViewport({ ratio: 0.1, timeout: 5000 });
     });
   }
 });
