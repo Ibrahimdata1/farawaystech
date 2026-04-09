@@ -22,24 +22,28 @@ const notoSansThai = Noto_Sans_Thai({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://runawaytech.co"),
-  title: "RunAway Tech - รับทำเว็บไซต์ รับทำแอป Software House คุณภาพ",
+  title: "RunAway Tech - แก้ปัญหาธุรกิจด้วยเทคโนโลยี | รับทำเว็บ แอป SEO",
   description:
-    "รับทำเว็บไซต์ รับทำแอปมือถือ รับเขียนโปรแกรม ระบบหลังบ้าน POS AI Agent ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้ ส่งงานไว มีผลงานจริง",
+    "แก้ปัญหาธุรกิจด้วยเทคโนโลยี — รับทำเว็บไซต์ รับทำแอป SEO ระบบ POS ระบบจองออนไลน์ Dashboard วิเคราะห์ธุรกิจ ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้",
   keywords: [
+    "แก้ปัญหาธุรกิจ",
+    "แก้ปัญหาธุรกิจด้วยเทคโนโลยี",
+    "tech solution แก้ปัญหาธุรกิจ",
     "รับทำเว็บไซต์",
     "รับทำเว็บ",
+    "รับทำ SEO",
     "รับเขียนโปรแกรม",
     "รับทำแอป",
     "รับทำแอปมือถือ",
-    "ทำเว็บราคาถูก",
     "software house",
     "software house ไทย",
+    "tech solution ธุรกิจ",
+    "ระบบ POS",
+    "ระบบจองออนไลน์",
+    "ระบบจัดการร้าน",
+    "รับทำระบบ",
     "พัฒนาซอฟต์แวร์",
     "web development",
-    "รับทำเว็บไซต์ราคาถูก",
-    "รับทำระบบ",
-    "mobile app",
-    "AI agent",
     "รับทำ POS",
     "รับทำระบบร้านอาหาร",
   ],
@@ -48,9 +52,9 @@ export const metadata: Metadata = {
     canonical: "https://runawaytech.co",
   },
   openGraph: {
-    title: "RunAway Tech - รับทำเว็บไซต์ รับทำแอป Software House",
+    title: "RunAway Tech - แก้ปัญหาธุรกิจด้วยเทคโนโลยี | Tech Solution Partner",
     description:
-      "รับทำเว็บไซต์ รับทำแอปมือถือ รับเขียนโปรแกรม ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้ มีผลงานจริง",
+      "แก้ปัญหาธุรกิจด้วยเทคโนโลยี รับทำเว็บไซต์ แอป SEO ระบบ POS ระบบจอง Dashboard ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้",
     url: "https://runawaytech.co",
     siteName: "RunAway Tech",
     type: "website",
@@ -58,9 +62,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "RunAway Tech - รับทำเว็บไซต์ รับทำแอป Software House",
+    title: "RunAway Tech - แก้ปัญหาธุรกิจด้วยเทคโนโลยี",
     description:
-      "รับทำเว็บไซต์ รับทำแอปมือถือ รับเขียนโปรแกรม ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้ มีผลงานจริง",
+      "แก้ปัญหาธุรกิจด้วยเทคโนโลยี รับทำเว็บไซต์ แอป SEO ระบบ POS Dashboard ครบวงจร ราคาเข้าถึงได้",
   },
 };
 
@@ -94,12 +98,15 @@ export default function RootLayout({
               "@type": "ProfessionalService",
               name: "RunAway Tech",
               description:
-                "รับทำเว็บไซต์ รับทำแอปมือถือ รับเขียนโปรแกรม ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้",
+                "แก้ปัญหาธุรกิจด้วยเทคโนโลยี — รับทำเว็บไซต์ แอป SEO ระบบ POS ระบบจอง Dashboard ครบวงจร ทีม Senior Developer ราคาเข้าถึงได้",
               url: "https://runawaytech.co",
               serviceType: [
+                "แก้ปัญหาธุรกิจด้วยเทคโนโลยี",
                 "รับทำเว็บไซต์",
                 "รับทำแอปมือถือ",
-                "รับเขียนโปรแกรม",
+                "รับทำ SEO",
+                "ระบบ POS",
+                "ระบบจองออนไลน์",
                 "Software Development",
                 "Mobile App Development",
                 "Web Development",

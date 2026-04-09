@@ -70,7 +70,7 @@ export default function ServicesSection({ lang }: ServicesSectionProps) {
 
   return (
     <section id="services" className="py-24 px-4 sm:px-6 section-alt">
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-8 md:grid-cols-2 md:px-8">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:px-8">
         {/* Left: Text */}
         <ContainerStagger>
           <ContainerAnimated className="mb-2 block text-sm font-medium text-accent-green uppercase tracking-wide">
@@ -110,7 +110,7 @@ export default function ServicesSection({ lang }: ServicesSectionProps) {
         </ContainerStagger>
 
         {/* Right: Gallery Grid */}
-        <div className="hidden md:grid grid-cols-2 grid-rows-[50px_150px_50px_150px_50px] gap-4">
+        <div className="hidden lg:grid grid-cols-2 grid-rows-[50px_150px_50px_150px_50px] gap-4">
           {solutionImages.map((src, index) => (
             <motion.div
               key={index}
@@ -132,7 +132,7 @@ export default function ServicesSection({ lang }: ServicesSectionProps) {
         </div>
 
         {/* Mobile: Simple image */}
-        <div className="md:hidden relative h-64 rounded-2xl overflow-hidden">
+        <div className="lg:hidden relative h-64 rounded-2xl overflow-hidden">
           <Image
             src={solutionImages[0]}
             alt=""

@@ -76,7 +76,7 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 py-4">
         {/* Logo — image for dark, CSS text for light */}
         <a href="#" className="flex items-center">
-          <span className="relative w-64 h-10 overflow-hidden dark-logo" style={{ display: 'block' }}>
+          <span className="relative w-40 sm:w-52 lg:w-64 h-10 overflow-hidden dark-logo" style={{ display: 'block' }}>
             <Image
               src="/logo.png"
               alt="RunAwayTech"
@@ -86,7 +86,7 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
               priority
             />
           </span>
-          <span className="relative w-64 h-10 overflow-hidden light-logo" style={{ display: 'none' }}>
+          <span className="relative w-40 sm:w-52 lg:w-64 h-10 overflow-hidden light-logo" style={{ display: 'none' }}>
             <Image
               src="/logo.png"
               alt="RunAwayTech"
@@ -99,7 +99,7 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
         </a>
 
         {/* Desktop nav */}
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="hidden items-center gap-6 lg:flex">
           {NAV_ITEMS.map((item) => {
             const label = nav[navKeyMap[item.id]];
             const isActive = activeSection === item.id;
@@ -143,7 +143,7 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
         </div>
 
         {/* Mobile hamburger */}
-        <div className="flex items-center gap-1.5 sm:gap-3 md:hidden">
+        <div className="flex items-center gap-1.5 sm:gap-3 lg:hidden">
           <button
             onClick={onToggleTheme}
             className="rounded border border-border p-2 min-h-[44px] min-w-[44px] flex items-center justify-center text-text-secondary transition-colors hover:text-text-primary"
@@ -193,7 +193,7 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="overflow-hidden border-t border-border md:hidden"
+            className="overflow-hidden border-t border-border lg:hidden"
           >
             <div className="flex flex-col gap-1 px-4 sm:px-6 py-2">
               {NAV_ITEMS.map((item) => {
