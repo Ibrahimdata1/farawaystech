@@ -21,8 +21,8 @@ export default function Footer({ lang }: FooterProps) {
                   src="/logo.png"
                   alt="RunAwayTech"
                   fill
-                  className="object-cover"
-                  style={{ mixBlendMode: "lighten", objectPosition: "center 68%" }}
+                  className="object-cover mix-blend-lighten"
+                  style={{ objectPosition: "center 68%" }}
                 />
               </span>
               <span className="relative w-48 h-8 overflow-hidden light-logo">

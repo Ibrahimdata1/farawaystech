@@ -118,8 +118,8 @@ section {
   border-color: rgba(228, 228, 231, 0.8);
 }
 
-/* Logo toggle */
-.dark-logo { display: block !important; }
+/* Logo toggle — inline style handles initial state, CSS takes over after load */
+.dark-logo { display: block !important; mix-blend-mode: lighten; }
 .light-logo { display: none !important; }
 
 [data-theme="light"] .dark-logo { display: none !important; }
