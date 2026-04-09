@@ -76,12 +76,13 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 py-4">
         {/* Logo — image for dark, CSS text for light */}
         <a href="#" className="flex items-center">
-          <span className="relative w-64 h-10 overflow-hidden dark-logo" style={{ display: 'block' }}>
+          <span className="relative w-64 h-10 overflow-hidden dark-logo" style={{ display: 'block', backgroundColor: 'var(--color-bg-primary)' }}>
             <Image
               src="/logo.png"
               alt="RunAwayTech"
               fill
-              className="object-contain"
+              className="object-cover"
+              style={{ objectPosition: 'center 68%' }}
               priority
             />
           </span>
@@ -90,7 +91,8 @@ export default function Navbar({ lang, onToggleLang, theme, onToggleTheme }: Nav
               src="/logo.png"
               alt="RunAwayTech"
               fill
-              className="object-contain brightness-0 invert-0"
+              className="object-cover light-logo-img"
+              style={{ objectPosition: 'center 68%' }}
               priority
             />
           </span>

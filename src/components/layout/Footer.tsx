@@ -16,12 +16,13 @@ export default function Footer({ lang }: FooterProps) {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col items-center md:items-start gap-2">
             <a href="#" className="flex items-center">
-              <span className="relative w-48 h-8 overflow-hidden dark-logo">
+              <span className="relative w-48 h-8 overflow-hidden dark-logo" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
                 <Image
                   src="/logo.png"
                   alt="RunAwayTech"
                   fill
-                  className="object-contain"
+                  className="object-cover"
+                  style={{ objectPosition: "center 68%" }}
                 />
               </span>
               <span className="relative w-48 h-8 overflow-hidden light-logo">
@@ -29,7 +30,8 @@ export default function Footer({ lang }: FooterProps) {
                   src="/logo.png"
                   alt="RunAwayTech"
                   fill
-                  className="object-contain brightness-0 invert-0"
+                  className="object-cover light-logo-img"
+                  style={{ objectPosition: "center 68%" }}
                 />
               </span>
             </a>
