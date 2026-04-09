@@ -120,7 +120,6 @@ section {
 
 /* Logo toggle */
 .dark-logo { display: block !important; }
-.dark-logo img { mix-blend-mode: lighten; }
 .light-logo { display: none !important; }
 
 [data-theme="light"] .dark-logo { display: none !important; }
