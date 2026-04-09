@@ -14,6 +14,10 @@ import WhyUsSection from "@/components/sections/WhyUsSection";
 import TechStackSection from "@/components/sections/TechStackSection";
 import PortfolioSection from "@/components/sections/PortfolioSection";
 import ContactSection from "@/components/sections/ContactSection";
+import SeoPromoSection from "@/components/sections/SeoPromoSection";
+import { SparklesCore } from "@/components/ui/SparklesCore";
+import UseCasesSection from "@/components/sections/UseCasesSection";
+import QuoteBanner from "@/components/ui/QuoteBanner";
 
 type Theme = "dark" | "light";
 
@@ -68,12 +72,36 @@ export default function PageClient() {
       <main id="main-content" className="overflow-x-hidden">
         <HeroSection lang={lang} />
         <ServicesSection lang={lang} />
+        <QuoteBanner text="Build Smart. Ship Fast." />
+        <UseCasesSection lang={lang} />
         <PortfolioSection lang={lang} />
+        <QuoteBanner text={lang === "th" ? "ซอฟต์แวร์ดี ไม่ต้องแพง แค่ต้องเจอทีมที่ใช่" : "Great software doesn't have to be expensive — just find the right team"} />
         <AboutSection lang={lang} />
         <ProcessSection lang={lang} />
+        <QuoteBanner text={lang === "th" ? "คุณภาพระดับองค์กร ราคาที่ SME เอื้อมถึง" : "Enterprise quality, SME pricing"} />
         <WhyUsSection lang={lang} />
-        <TechStackSection lang={lang} />
-        <ContactSection lang={lang} />
+        <div className="relative overflow-hidden">
+          {/* Shared sparkles across TechStack + SEO + Contact */}
+          <div className="absolute inset-0 pointer-events-none">
+            <SparklesCore
+              id="bottom-sparkles"
+              background="transparent"
+              minSize={0.6}
+              maxSize={2}
+              particleDensity={100}
+              speed={1}
+              particleColor="#60a5fa"
+              className="w-full h-full"
+            />
+          </div>
+          <div className="absolute inset-0 bg-bg-primary/50 pointer-events-none" />
+          <div className="relative z-10">
+            <TechStackSection lang={lang} />
+            <QuoteBanner text={lang === "th" ? "ไอเดียคุณ ซอฟต์แวร์เรา" : "Your idea, our software"} />
+            <SeoPromoSection lang={lang} />
+            <ContactSection lang={lang} />
+          </div>
+        </div>
       </main>
       <Footer lang={lang} />
     </MotionProvider>

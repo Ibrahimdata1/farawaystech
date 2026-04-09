@@ -1,6 +1,18 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "tailark.com",
+      },
+    ],
+  },
   async headers() {
     return [
       {
@@ -18,7 +30,7 @@ const nextConfig: NextConfig = {
               "script-src 'self' 'unsafe-inline'",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
-              "img-src 'self' data:",
+              "img-src 'self' data: https://images.unsplash.com https://tailark.com",
               "connect-src 'self'",
               "frame-ancestors 'none'",
             ].join("; "),

@@ -49,7 +49,6 @@ export default function ProcessSection({ lang }: ProcessSectionProps) {
         <div className="lg:hidden space-y-0">
           {data.steps.map((step, i) => (
             <div key={i} className="flex">
-              {/* Left: number + line */}
               <div className="flex flex-col items-center mr-5">
                 <ScrollReveal delay={i * 0.1}>
                   <div className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-accent-green/30 bg-accent-green/5 text-accent-green text-sm font-bold">
@@ -60,7 +59,6 @@ export default function ProcessSection({ lang }: ProcessSectionProps) {
                   <div className="flex-1 w-px bg-border my-2" />
                 )}
               </div>
-              {/* Right: content */}
               <ScrollReveal delay={i * 0.1} className="pb-8 pt-1.5">
                 <p className="text-text-primary font-semibold mb-1">
                   {step.title}
